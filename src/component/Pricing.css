@@ -1,5 +1,5 @@
 .pricing-heading {
-  margin-top: 4rem;
+  margin-top: 0rem;
 }
 .title-description {
   font-family: sans-serif;
@@ -13,7 +13,7 @@
 }
 .plans {
   display: flex;
-  text-align: center;
+  /* text-align: center; */
   justify-content: center;
   gap: 0.5rem;
   /* margin-left: rem; */
@@ -26,43 +26,44 @@
    margin-top: 15rem;
 }
 .monthly {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   cursor: pointer;
   /* justify-content: center; */
   font-family: sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
 }
 .annually {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   cursor: pointer;
   font-family: sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
 }
 .quarterly{
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     cursor: pointer;
     font-family: sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
 }
 .half-yearly{
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     cursor: pointer;
     font-family: sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
 }
 .selected {
   background: #ffffff;
   border-radius: 0.3rem;
-  height: 1.7rem;
-  /* width: 7rem; */
+  height: 1.5rem;
+  width: 8rem;
   cursor: pointer;
   font-family: sans-serif;
   font-weight: 400;
   font-size: 16px;
+
 }
 .pricing-plans{
     display: flex;
@@ -98,15 +99,22 @@
     /* background-color: rgba(123, 53, 212, 0.1);  */
     /* Set faded background color */
   }
-  
+  .subscribe{
+    background: linear-gradient(90deg, #7B34D4 0%, #54CED6 100%);
+    ;
+  }
   @media screen and (max-width: 600px) {
     .pricing-plans{
-      margin-left: -2rem;
+      margin-left: -1rem;
     }
     .plans {
-        height: 3.5rem;   
+        height: 2.5rem;
+        /* margin-left: 1rem;    */
     }
     .selected{
-        height: 2.7rem;
+        height: 1.7rem;
     }
+    .pricing-heading {
+        margin-top: -1rem;
+      }
   }

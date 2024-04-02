@@ -274,7 +274,7 @@ export default function Pricing() {
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" className="subscribe">
                 Subscribe
               </Button>
             </CardContent>
