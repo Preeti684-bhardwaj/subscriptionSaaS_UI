@@ -103,4 +103,10 @@
     .pricing-plans{
       margin-left: -2rem;
     }
+    .plans {
+        height: 3.5rem;   
+    }
+    .selected{
+        height: 2.7rem;
+    }
   }

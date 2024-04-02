@@ -1,4 +1,19 @@
 .App {
   text-align: center;
  /* Adjust the height as needed */
+ background-image: url(../src/component/Home.png);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ height: 100%; 
+ width: 100%;
 }
+@media screen and (max-width: 600px) {
+  .App{
+    background-image: url(../src/component/mobileHome1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150vh; 
+    width: 95vw;
+  }}
