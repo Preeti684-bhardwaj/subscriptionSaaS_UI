@@ -108,11 +108,12 @@
       margin-left: -1rem;
     }
     .plans {
-        height: 2.5rem;
+        height: 3.5rem;
         margin-left: 1rem;   
     }
     .selected{
-        height: 1.7rem;
+        height: 2.7rem;
+        width: 6rem;
     }
     .pricing-heading {
         margin-top: 0rem;
