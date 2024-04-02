@@ -99,3 +99,8 @@
     /* Set faded background color */
   }
   
+  @media screen and (max-width: 600px) {
+    .pricing-plans{
+      margin-left: -2rem;
+    }
+  }
