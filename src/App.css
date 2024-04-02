@@ -1,38 +1,46 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
+.left-circle{
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  left: -7rem;
+  /* bottom: 5rem; */
+  top: -5rem;
+  background: radial-gradient(71.32% 71.32% at 31.24% 14.66%, rgba(212, 54, 196, 0.1) 0%, rgba(123, 56, 212, 0.1) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mid-circle{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 21rem;
+  /* bottom: 5rem; */
+  top: 3rem;
+  background: radial-gradient(71.32% 71.32% at 31.24% 14.66%, rgba(212, 54, 196, 0.1) 0%, rgba(123, 56, 212, 0.1) 100%);
 }
+.right-circle{
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -5rem;
+  /* bottom: 5rem; */
+  top: -5rem;
+  background: radial-gradient(71.32% 71.32% at 31.24% 14.66%, rgba(123, 54, 212, 0.1) 0%, rgba(86, 197, 213, 0.1) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
+.bottom-circle{
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -8rem;
+  bottom: -4rem;
+  background: radial-gradient(71.32% 71.32% at 31.24% 14.66%, rgba(97, 255, 0, 0.1) 0%, rgba(56, 212, 137, 0.1) 80.21%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
