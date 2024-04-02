@@ -109,7 +109,7 @@
     }
     .plans {
         height: 2.5rem;
-        /* margin-left: 1rem;    */
+        margin-left: 1rem;   
     }
     .selected{
         height: 1.7rem;
