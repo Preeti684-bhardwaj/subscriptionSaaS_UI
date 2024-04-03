@@ -196,7 +196,7 @@ export default function Pricing() {
     <div>
       <Navbar/>
       <div className="pricing-heading">
-        <h1 style={{ fontFamily: "sans-serif", fontWeight: "900",marginTop:'5rem' }}>
+        <h1 style={{ fontFamily: "sans-serif", fontWeight: "900",marginTop:'2rem' }}>
           Pricing Plans
         </h1>
         <p
