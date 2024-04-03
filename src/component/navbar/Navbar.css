@@ -17,18 +17,7 @@
     height: 2rem;
     border: 1px solid #7B34D4 ;
     border-radius: 5px;
-    color: #7B34D4;
+    color: #FFFFFF;
     cursor: pointer;
-}
-.signIn:hover{
     background-color: #7B34D4;
-    /* border: 2px solid; */
-    border-radius: 5px;
-    color: white;
-
-}
-.signUp:hover{
-    background-color: #7B34D4;
-    color: white;
-
 }
