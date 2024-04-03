@@ -1,9 +1,18 @@
-.pricing-heading {
-  margin-top: 0rem;
+.inter-title-description {
+  font-family: "Inter";
+  font-optical-sizing: 56px;
+  font-weight:900;
+  font-style: normal;
+}
+.pricing-heading h1{
+  margin-top: '2rem'; 
+  font-family: "Inter";
+  font-weight: 1000;
 }
 .title-description {
-  font-family: sans-serif;
-  font-size: 20px;
+  font-family: "Inter";
+  font-size: 26px;
+  font-weight: 400;
   color: #333333;
 }
 .plan-type {
@@ -12,13 +21,6 @@
   justify-content: center;
 }
 .plans {
-  display: flex;
-  /* text-align: center; */
-  justify-content: center;
-  gap: 0.5rem;
-  /* margin-left: rem; */
-  height: 2.5rem;
-  width: 30rem;
   background-color: #E6E6E6;
   border-radius: 0.5rem;
 }
@@ -29,38 +31,36 @@
   margin-top: 0.4rem;
   cursor: pointer;
   /* justify-content: center; */
-  font-family: sans-serif;
+  font-family:'Inter';
   font-weight: 300;
   font-size: 16px;
 }
 .annually {
   margin-top: 0.4rem;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: "Inter";
   font-weight: 300;
   font-size: 16px;
 }
 .quarterly{
     margin-top: 0.4rem;
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: "Inter";
     font-weight: 300;
     font-size: 16px;
 }
 .half-yearly{
     margin-top: 0.4rem;
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: "Inter";
     font-weight: 300;
     font-size: 16px;
 }
 .selected {
   background: #ffffff;
   border-radius: 0.3rem;
-  height: 1.5rem;
-  width: 8rem;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: "Inter";
   font-weight: 400;
   font-size: 16px;
 
@@ -94,10 +94,11 @@
 
   .pricing-plan:hover {
     transform: scale(1.05); /* Enlarge the card on hover */
-    border: 2px solid #7b35d4; /* Set border */
-    border-radius:1rem;
+    border: 1px solid #7b35d4; /* Set border */
+    border-radius:0.5rem;
   }
   .subscribe{
+    font-family: "Inter";
     background: linear-gradient(90deg, #7B34D4 0%, #54CED6 100%);
     ;
   }
@@ -115,6 +116,7 @@
         width: 6rem;
     }
     .pricing-heading {
+      font-family: "Inter";
         margin-top: 0rem;
       }
   }
