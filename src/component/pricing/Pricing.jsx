@@ -214,13 +214,6 @@ export default function Pricing() {
             onClick={() => handleOptionClick("monthly")}
           />
           <Tab
-            label="Yearly plans"
-            className={`annually ${
-              selectedOption === "annually" ? "selected" : ""
-            }`}
-            onClick={() => handleOptionClick("annually")}
-          />
-          <Tab
             label="Quarterly plans"
             className={`quarterly ${
               selectedOption === "quarterly" ? "selected" : ""
@@ -233,6 +226,14 @@ export default function Pricing() {
               selectedOption === "half-yearly" ? "selected" : ""
             }`}
             onClick={() => handleOptionClick("half-yearly")}
+          />
+           <Tab
+           style={{height:'2rem'}}
+            label="Yearly plans"
+            className={`annually ${
+              selectedOption === "annually" ? "selected" : ""
+            }`}
+            onClick={() => handleOptionClick("annually")}
           />
         </div>
       </div>
@@ -262,7 +263,7 @@ export default function Pricing() {
               </Typography>
               <ul>
                 {product.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+                  <li key={index} className="feature">{feature}</li>
                 ))}
               </ul>
               <Button variant="contained" className="subscribe">
