@@ -1,5 +1,5 @@
 .pricing-heading {
-  margin-top: 0rem;
+  margin-top: -4rem;
 }
 .title-description {
   font-family: sans-serif;
@@ -75,12 +75,12 @@
     margin-top: 2rem;
     width: 20rem;
     margin-left: 2rem;
-    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; /* Add transition for border and background color */
+    /* transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; Add transition for border and background color */
     position: relative; /*Add position relative*/
   }
   
-  .pricing-plan::before { /* Add pseudo-element for faded background */
-    content: "";
+  /* .pricing-plan::before { /* Add pseudo-element for faded background */
+    /* content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -88,16 +88,14 @@
     height: 100%;
     /* background-color: rgba(123, 53, 212, 0.1); */
      /* Set faded background color */
-    border-radius: 0.5rem;
-     z-index: -1; /*Move pseudo-element behind content */
-  }
-  
+    /* border-radius: 0.5rem; */
+     /* z-index: -1; Move pseudo-element behind content */
+  /* } */
+
   .pricing-plan:hover {
     transform: scale(1.05); /* Enlarge the card on hover */
     border: 2px solid #7b35d4; /* Set border */
     border-radius:1rem;
-    /* background-color: rgba(123, 53, 212, 0.1);  */
-    /* Set faded background color */
   }
   .subscribe{
     background: linear-gradient(90deg, #7B34D4 0%, #54CED6 100%);

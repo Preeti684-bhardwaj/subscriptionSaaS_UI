@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, Typography, Button } from "@mui/material";
 import "./Pricing.css";
+import Navbar from "../navbar/Navbar";
 
 export default function Pricing() {
   const [selectedOption, setSelectedOption] = useState("monthly");
@@ -193,8 +194,9 @@ export default function Pricing() {
 
   return (
     <div>
+      <Navbar/>
       <div className="pricing-heading">
-        <h1 style={{ fontFamily: "sans-serif", fontWeight: "900" }}>
+        <h1 style={{ fontFamily: "sans-serif", fontWeight: "900",marginTop:'5rem' }}>
           Pricing Plans
         </h1>
         <p

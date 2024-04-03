@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content:flex-end;
+    gap: 2rem;
+}
+.signIn:hover{
+    background-color: #ffffff;
+    /* border: 2px solid; */
+    border-radius: 5px;
+    /* height: 1rem;
+    width: 3rem; */
+}
+.signUp:hover{
+    background-color: #ffffff;
+
+}

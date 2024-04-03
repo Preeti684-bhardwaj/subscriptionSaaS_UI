@@ -1,7 +1,7 @@
 .App {
   text-align: center;
  /* Adjust the height as needed */
- background-image: url(../src/component/Home.png);
+ background-image: url(../src/component/pricing/Home.png);
  background-size: cover;
  background-repeat: no-repeat;
  background-position: center;
@@ -10,7 +10,7 @@
 }
 @media screen and (max-width: 600px) {
   .App{
-    background-image: url(../src/component/mobileHome1.png);
+    background-image: url(../src/component/pricing/mobileHome1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
