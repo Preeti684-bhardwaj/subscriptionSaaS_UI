@@ -228,7 +228,6 @@ export default function Pricing() {
             onClick={() => handleOptionClick("half-yearly")}
           />
            <Tab
-           style={{height:'2rem'}}
             label="Yearly plans"
             className={`annually ${
               selectedOption === "annually" ? "selected" : ""

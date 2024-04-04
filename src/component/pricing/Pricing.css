@@ -1,11 +1,11 @@
 .inter-title-description {
   font-family: "Inter";
   font-optical-sizing: 56px;
-  font-weight:900;
+  font-weight: 900;
   font-style: normal;
 }
-.pricing-heading h1{
-  margin-top: 0; 
+.pricing-heading h1 {
+  margin-top: 0;
   font-family: "Inter";
   font-weight: 1000;
 }
@@ -24,147 +24,153 @@
 .plans {
   display: flex !important;
   text-align: center !important;
-  justify-content: center !important;
-  background-color: #E6E6E6;
+  justify-content: space-around !important;
+  background-color: #e6e6e6;
   border-radius: 0.5rem;
-  width: 35rem;
+  /* flex-wrap: wrap; */
+  /* gap: -2rem; */
+  /* width: 35rem; */
   /* justify-content: center !important; */
 }
-.no-plans{
-   margin-top: 15rem;
+.no-plans {
+  margin-top: 15rem;
 }
 .monthly {
-  margin: 5px !important;
+  margin: 3px !important;
   cursor: pointer;
   /* justify-content: center; */
-  font-family:"Inter"!important;
+  font-family: "Inter" !important;
   font-weight: 600 !important;
   font-size: 16px;
   padding: 5px 5px !important;
   text-transform: none !important;
 }
-.annually{
-  margin: 5px !important;
+.annually {
+  margin: 3px !important;
   cursor: pointer;
-  font-family:"Inter"!important;
+  font-family: "Inter" !important;
   font-weight: 600 !important;
   padding: 5px 5px !important;
   font-size: 16px;
   text-transform: none !important;
 }
-.quarterly{
-  margin: 5px !important;
-    cursor: pointer;
-    font-family:"Inter" !important;
-    padding: 5px 5px !important;
-    font-weight: 600 !important;
-    font-size: 16px;
-    text-transform: none !important;
-}
-.half-yearly{
-  margin: 5px !important;
-    /* margin-top: 0.4rem; */
-    cursor: pointer;
-    font-family: "Inter"!important;
-    padding: 5px 5px !important;
-    font-weight: 600 !important;
-    font-size: 16px;
-    text-transform: none !important;
-}
-.selected {
-  background: #ffffff !important;
-  border-radius: 0.3rem !important;
+.quarterly {
+  margin: 3px !important;
   cursor: pointer;
   font-family: "Inter" !important;
   padding: 5px 5px !important;
   font-weight: 600 !important;
   font-size: 16px;
   text-transform: none !important;
+}
+.half-yearly {
+  margin: 3px !important;
+  /* margin-top: 0.4rem; */
+  cursor: pointer;
+  font-family: "Inter" !important;
+  padding: 5px 5px !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  text-transform: none !important;
+}
+.selected {
+  background: #ffffff !important;
+  border-radius: 0.3rem !important;
+  cursor: pointer;
+  /* font-family: "Inter" !important;
+  padding: 5px 5px !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  text-transform: none !important; */
+}
+.pricing-plans {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.pricing-plan {
+  margin-top: 2rem;
+  width: 20rem;
+  margin-left: 2rem;
+  /* transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; Add transition for border and background color */
+  position: relative; /*Add position relative*/
+}
 
-}
-.pricing-plans{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-}
-.pricing-plan{
-    margin-top: 2rem;
-    width: 20rem;
-    margin-left: 2rem;
-    /* transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; Add transition for border and background color */
-    position: relative; /*Add position relative*/
-  }
-  
-  /* .pricing-plan::before { /* Add pseudo-element for faded background */
-    /* content: "";
+/* .pricing-plan::before { /* Add pseudo-element for faded background */
+/* content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     /* background-color: rgba(123, 53, 212, 0.1); */
-     /* Set faded background color */
-    /* border-radius: 0.5rem; */
-     /* z-index: -1; Move pseudo-element behind content */
-  /* } */
+/* Set faded background color */
+/* border-radius: 0.5rem; */
+/* z-index: -1; Move pseudo-element behind content */
+/* } */
 
-  .pricing-plan:hover {
-    transform: scale(1.05); /* Enlarge the card on hover */
-    border: 1px solid #7b35d4; /* Set border */
-    border-radius:0.5rem;
-  }
-  .feature{
-
-  }
-  .subscribe{
+.pricing-plan:hover {
+  transform: scale(1.05); /* Enlarge the card on hover */
+  border: 1px solid #7b35d4; /* Set border */
+  border-radius: 0.5rem;
+}
+.feature {
+}
+.subscribe {
+  font-family: "Inter" !important;
+  font-weight: 600 !important;
+  background: linear-gradient(90deg, #7b34d4 0%, #54ced6 100%);
+}
+@media screen and (max-width: 600px) {
+  .pricing-heading {
     font-family: "Inter" !important;
-    font-weight: 600 !important;
-    background: linear-gradient(90deg, #7B34D4 0%, #54CED6 100%);
-    ;
+    margin-top: 1rem;
   }
-  @media screen and (max-width: 600px) {
-    .pricing-heading {
-      font-family: "Inter" !important;
-      margin-top: 1rem;
-    }
-    .title-description{
-      margin-left: 1rem;
-    }
-    .plan-type {
-      margin-left: 1rem;
-    }
-    .plans {
-      height: 3.5rem !important;
-      /* margin-left: 1rem;    */
-      width: 25rem !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      background-color: #E6E6E6;
-    }
-    .monthly {
-      width: 0 !important;
-      margin-left: 15px !important;
-    }
-    .annually{
-      width: 0 !important;
-      /* padding: 0 !important; */
-      margin-right: 10px !important;
-    }
-    .half-yearly{
-      width: 0 !important;
-      /* padding: 0 !important; */
-    }
-    .quarterly{
-      width: 0 !important;
-      /* padding: 0 !important; */
-    }
-    .selected{
-      /* height: 1.7rem;
+  .title-description {
+    margin-left: 1rem;
+  }
+  .plan-type {
+    margin-left: 1rem;
+  }
+  .plans {
+    height: 3.5rem !important;
+    /* margin-left: 1rem;    */
+    width: 25rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #e6e6e6;
+  }
+  .monthly {
+    width: 0 !important;
+    margin: 0.5px !important;
+    /* margin-left: 1px !important; */
+  }
+  .annually {
+    width: 0 !important;
+    margin: 0.5px !important;
+    /* padding: 0 !important; */
+    /* margin-right: 1px !important; */
+  }
+  .half-yearly {
+    width: 0 !important;
+    margin: 0.5px !important;
+    /* padding: 0 !important; */
+  }
+  .quarterly {
+    width: 0 !important;
+    margin: 0.5px !important;
+    /* padding: 0 !important; */
+  }
+  .selected {
+    margin: 2px !important;
+    /* margin-top: 0.24rem !important; */
+
+    /* height: 1.7rem;
       width: 0rem; */
-      /* padding: 0 !important; */
-    }
-    .pricing-plans{
-      margin-left: -1rem !important;
-    }
+    /* padding: 0 !important; */
   }
+  .pricing-plans {
+    margin-left: -1rem !important;
+  }
+}
