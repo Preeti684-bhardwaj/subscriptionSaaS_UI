@@ -144,22 +144,26 @@
   .monthly {
     width: 0 !important;
     margin: 0.5px !important;
+    font-size: small;
     /* margin-left: 1px !important; */
   }
   .annually {
     width: 0 !important;
     margin: 0.5px !important;
+    font-size: small;
     /* padding: 0 !important; */
     /* margin-right: 1px !important; */
   }
   .half-yearly {
     width: 0 !important;
     margin: 0.5px !important;
+    font-size: small;
     /* padding: 0 !important; */
   }
   .quarterly {
     width: 0 !important;
     margin: 0.5px !important;
+    font-size: small;
     /* padding: 0 !important; */
   }
   .selected {
