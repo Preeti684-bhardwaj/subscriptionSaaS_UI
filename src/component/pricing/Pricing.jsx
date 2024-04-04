@@ -3,7 +3,6 @@ import { Card, CardContent, Typography, Button, Tab } from "@mui/material";
 import "./Pricing.css";
 import Navbar from "../navbar/Navbar";
 
-
 export default function Pricing() {
   const [selectedOption, setSelectedOption] = useState("monthly");
   const [data, setData] = useState(null);

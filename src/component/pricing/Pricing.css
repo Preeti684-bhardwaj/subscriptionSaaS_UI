@@ -26,7 +26,7 @@
 }
 .plans {
   display: flex !important;
-  width: 35rem;
+  /* width: 35rem; */
   text-align: center !important;
   justify-content: center !important;
   background-color: #e6e6e6;
