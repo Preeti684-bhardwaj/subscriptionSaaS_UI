@@ -196,7 +196,7 @@ export default function Pricing() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <div className="pricing-heading">
         <h1>  Pricing Plans </h1>
         <p className="title-description">

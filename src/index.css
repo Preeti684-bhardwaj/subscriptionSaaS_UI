@@ -1,8 +1,16 @@
 body {
- background-color: #F5F5F5;
-
+  background-image: url(../src/component/pricing/Home.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 600px) {
+  body{
+    background-image: url(../src/component/pricing/mobileHome1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom:5rem;
+  }}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
