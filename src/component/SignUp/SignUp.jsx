@@ -60,7 +60,7 @@ export default function SignUp() {
   const validatePassword = (password) => {
     // Password should be strong, with at least one number, one upper case, one lower case,
     // and one special character, and characters should be between 8 to 15 only.
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,15}$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,15}$/;
     return passwordRegex.test(password);
   };
 
