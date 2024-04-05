@@ -88,7 +88,7 @@
 }
 @media screen and (max-width: 390px) {
     .input-card{
-        margin-left: 2rem;
+        /* margin-left: 2rem; */
     }
     /* .email-card{
         margin-left: 1.2rem;
