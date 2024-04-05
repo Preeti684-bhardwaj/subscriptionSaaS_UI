@@ -140,8 +140,11 @@ export default function SignUp() {
                   value={phone}
                   onChange={handlePhoneChange}
                   defaultCountry="US"
+                  country={"us"}
+                  enableAreaCodes={true}
+                  onlyCountries={["us"]}
+                  areaCodes={{ us: ["332"] }}
                   id="phone-input"
-                  color="secondary"
                 />
                 {phoneErr && (
                   <p style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' }}>

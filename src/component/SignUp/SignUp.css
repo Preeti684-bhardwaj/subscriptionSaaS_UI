@@ -41,13 +41,13 @@
   font-weight: 500 !important;
   font-size: 13px !important;
 }
-#phone-input {
+#phone-input{
   height: 2rem;
   border-radius: 0.3rem;
   border: 1px solid grey;
 }
 #phone-input:hover{
-  border: 1px solid black;
+  border: 1px solid #7A38D4;
 }
 .email-card{
     display: flex;
