@@ -21,12 +21,12 @@
   font-weight: 400 !important;
 }
 .input-card{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     /* text-align: center; */
     /* width: 18rem; */
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .phone-card {
   display: flex;
