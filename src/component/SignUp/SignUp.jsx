@@ -78,7 +78,7 @@ export default function SignUp() {
   
   
       if (!validatePassword(password)) {
-        setPasswordErr('Password should be strong, with one number, one upper case, one lower case, one special character, and between 8 to 15 characters.');
+        setPasswordErr('Password should be strong with one number,one letter,one special character and between 8 to 15 characters.');
         return;
       } else {
         setPasswordErr(''); // Clear the password error state when it's strong
