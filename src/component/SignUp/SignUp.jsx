@@ -172,7 +172,7 @@ export default function SignUp() {
                 }
               />
             </FormControl>
-            <div style={{color:"red",fontSize:"12px"}}>{ PasswordErr}</div>
+            <div style={{color:"red",fontSize:"12px",fontFamily:'Inter'}}>{ PasswordErr}</div>
             </div>
           </div>
           </CardContent>
