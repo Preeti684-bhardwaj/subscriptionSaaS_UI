@@ -126,8 +126,9 @@ export default function SignUp() {
             <Typography className="sub-Title" component="div">
               Please fill the details to create account
             </Typography>
+          </CardContent>
           {/* ========================================================= */}
-          {/* <div className="input-card"> */}
+          <div className="input-card">
           <div className="phone-card">
             <p>Phone number</p>
             <TextField
@@ -171,10 +172,9 @@ export default function SignUp() {
                 }
               />
             </FormControl>
-            <div style={{color:"red",fontSize:"12px" , fontFamily:'Inter'}}>{ PasswordErr}</div>
+            <div style={{color:"red",fontSize:"12px"}}>{ PasswordErr}</div>
             </div>
-          {/* </div> */}
-          </CardContent>
+          </div>
           <CardActions className="button-card">
               <Button variant="contained" className="signup-button" onClick={handleSubmit}>
                 Sign up

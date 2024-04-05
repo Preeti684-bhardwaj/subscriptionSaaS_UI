@@ -6,7 +6,7 @@
 .signup {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .cardTitle {
   font-family: "Inter" !important;
@@ -25,8 +25,8 @@
     flex-direction: column;
     justify-content: center;
     /* text-align: center; */
-    width: 18rem;
-    margin-left: 4rem;
+    /* width: 18rem; */
+    /* margin-left: 4rem; */
 }
 .phone-card {
   display: flex;
