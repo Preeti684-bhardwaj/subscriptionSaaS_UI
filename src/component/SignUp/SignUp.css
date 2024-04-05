@@ -87,12 +87,12 @@
     gap: 1rem;
     margin-bottom: 2rem;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .input-card{
         /* margin-left: 2rem; */
     }
     .signup {
-      margin-top: 7rem;
+      margin-top: 5rem !important;
     }
     /* .email-card{
         margin-left: 1.2rem;
