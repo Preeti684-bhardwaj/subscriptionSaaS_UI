@@ -1,12 +1,12 @@
-/* .App {
- background-image: url(../src/component/pricing/Home.png);
+.App { 
+ /* background-image: url(../src/component/pricing/Home.png);
  background-size: cover;
  background-repeat: no-repeat;
  height: 97vh; 
- width: 100vw;
+ width: 100vw; */
  margin-top:-1rem;
 }
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   .App{
     background-image: url(../src/component/pricing/mobileHome1.png);
     background-size: cover;

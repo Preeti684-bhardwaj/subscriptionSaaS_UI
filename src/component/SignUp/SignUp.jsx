@@ -51,10 +51,38 @@ export default function SignUp() {
     setPhone(newPhone);
   };
 
+    const validateEmail = (email) => {
+    // Use a regular expression for basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    // Password should be strong, with at least one number, one upper case, one lower case,
+    // and one special character, and characters should be between 8 to 15 only.
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,15}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setEmailerr("");
     let item = { phone,email, password };
+
+    if (!validateEmail(email)) {
+        setEmailerr('Invalid email address');
+        return;
+      } else {
+        setEmailerr(''); // Clear the error state when a valid email is entered
+      }
+  
+  
+      if (!validatePassword(password)) {
+        setPasswordErr('Password should be strong, with one number, one upper case, one lower case, one special character, and between 8 to 15 characters.');
+        return;
+      } else {
+        setPasswordErr(''); // Clear the password error state when it's strong
+      }
 
     const headerObject = {
       "Content-Type": "application/json",
@@ -73,10 +101,10 @@ export default function SignUp() {
         console.log("errors", err);
         if (err.response && err.response.data) {
           if (err.response.data.message === "Email is already in use.") {
-            setEmailerr("Email is already in use");
+            setEmailerr("*Email is already in use");
           } else {
-            setError("");
-            setEmailerr("");
+            setError(" ");
+            setEmailerr(" ");
             setPasswordErr("");
           }
         }
@@ -98,9 +126,8 @@ export default function SignUp() {
             <Typography className="sub-Title" component="div">
               Please fill the details to create account
             </Typography>
-          </CardContent>
           {/* ========================================================= */}
-          <div className="input-card">
+          {/* <div className="input-card"> */}
           <div className="phone-card">
             <p>Phone number</p>
             <TextField
@@ -120,6 +147,7 @@ export default function SignUp() {
               value={email}
               onChange={handleEmailChange}
             />
+            <div style={{color:"red",fontSize:"12px",fontFamily:'Inter'}}>{emailerr}</div>
           </div>
           <div className="password-card">
             <p>Password</p>
@@ -143,8 +171,10 @@ export default function SignUp() {
                 }
               />
             </FormControl>
+            <div style={{color:"red",fontSize:"12px" , fontFamily:'Inter'}}>{ PasswordErr}</div>
             </div>
-          </div>
+          {/* </div> */}
+          </CardContent>
           <CardActions className="button-card">
               <Button variant="contained" className="signup-button" onClick={handleSubmit}>
                 Sign up
