@@ -47,11 +47,15 @@ export default function SignUp() {
   };
 
   const handlePhoneChange = (value) => {
-    setPhone(value);
-    if (!isValidPhoneNumber(value)) {
-      setPhoneErr("Invalid phone number");
-    } else {
-      setPhoneErr("");
+    try {
+      setPhone(value);
+      if (!isValidPhoneNumber(value)) {
+        setPhoneErr("Invalid phone number");
+      } else {
+        setPhoneErr("");
+      }
+    } catch (error) {
+      console.error("Error in handlePhoneChange:", error);
     }
   };
 
@@ -140,10 +144,6 @@ export default function SignUp() {
                   value={phone}
                   onChange={handlePhoneChange}
                   defaultCountry="US"
-                  country={"us"}
-                  enableAreaCodes={true}
-                  onlyCountries={["us"]}
-                  areaCodes={{ us: ["332"] }}
                   id="phone-input"
                 />
                 {phoneErr && (
