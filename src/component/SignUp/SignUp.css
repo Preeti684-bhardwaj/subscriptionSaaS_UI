@@ -41,6 +41,14 @@
   font-weight: 500 !important;
   font-size: 13px !important;
 }
+#phone-input {
+  height: 2rem;
+  border-radius: 0.3rem;
+  border: 1px solid grey;
+}
+#phone-input:hover{
+  border: 1px solid black;
+}
 .email-card{
     display: flex;
     flex-direction: column;
@@ -48,6 +56,10 @@
     /* width: 20rem; */
     /* margin-left: 3rem; */
 }
+/* .email-textfield:hover{
+  border: 0.5px solid #7A38D4;
+  border-radius: 0.1rem;
+} */
 .email-card p{
     font-family: "Inter";
     font-weight: 500 !important;
