@@ -128,7 +128,7 @@ export default function SignUp() {
             </Typography>
           
           {/* ========================================================= */}
-          <div className="input-card">
+          {/* <div className="input-card"> */}
           <div className="phone-card">
             <p>Phone number</p>
             <TextField
@@ -174,7 +174,7 @@ export default function SignUp() {
             </FormControl>
             <div style={{color:"red",fontSize:"12px"}}>{ PasswordErr}</div>
             </div>
-          </div>
+          {/* </div> */}
           </CardContent>
           <CardActions className="button-card">
               <Button variant="contained" className="signup-button" onClick={handleSubmit}>
