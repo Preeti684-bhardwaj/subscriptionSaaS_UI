@@ -1,12 +1,13 @@
 .signup-card {
   width: 26rem;
   justify-content: center !important;
+
 }
 
 .signup {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .cardTitle {
   font-family: "Inter" !important;
@@ -76,8 +77,8 @@
     display: flex;
     justify-content: center;
     /* padding: 7rem; */
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    /* margin-bottom: 1rem; */
+    margin-top: 0.5rem;
 }
 .last-option{
     display: flex;
@@ -89,6 +90,9 @@
 @media screen and (max-width: 390px) {
     .input-card{
         /* margin-left: 2rem; */
+    }
+    .signup {
+      margin-top: 2rem;
     }
     /* .email-card{
         margin-left: 1.2rem;
