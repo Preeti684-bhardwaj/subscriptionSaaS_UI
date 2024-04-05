@@ -139,7 +139,7 @@ export default function SignUp() {
 
             <div className="input-card">
               <div className="phone-card">
-                <p>Phone number</p>
+                <p className="phone-title">Phone number</p>
                 <PhoneInput
                   value={phone}
                   onChange={handlePhoneChange}
@@ -147,13 +147,13 @@ export default function SignUp() {
                   id="phone-input"
                 />
                 {phoneErr && (
-                  <p style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' }}>
+                  <p style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' ,marginBottom:'0px'}}>
                     {phoneErr}
                   </p>
                 )}
               </div>
               <div className="email-card">
-                <p>Email</p>
+                <p className="email-title">Email</p>
                 <TextField
                   className="email-textfield"
                   size="small"
@@ -162,7 +162,7 @@ export default function SignUp() {
                   value={email}
                   onChange={handleEmailChange}
                 />
-                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' }}>
+                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' ,marginBottom:'0px'}}>
                   {emailerr}
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function SignUp() {
                     }
                   />
                 </FormControl>
-                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' }}>
+                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' ,marginBottom:'0px'}}>
                   {PasswordErr}
                 </div>
               </div>
