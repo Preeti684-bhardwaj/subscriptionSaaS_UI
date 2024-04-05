@@ -88,11 +88,11 @@
     margin-bottom: 2rem;
 }
 @media screen and (max-width: 600px) {
-    .input-card{
+    /* .input-card{
         /* margin-left: 2rem; */
-    }
+    /* }  */
     .signup {
-      margin-top: 5rem !important;
+      margin-top: 6rem !important;
     }
     /* .email-card{
         margin-left: 1.2rem;
