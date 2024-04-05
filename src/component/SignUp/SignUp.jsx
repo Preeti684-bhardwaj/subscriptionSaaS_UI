@@ -143,7 +143,7 @@ export default function SignUp() {
                 <PhoneInput
                   value={phone}
                   onChange={handlePhoneChange}
-                  defaultCountry="US"
+                  defaultCountry="IN"
                   id="phone-input"
                 />
                 {phoneErr && (
