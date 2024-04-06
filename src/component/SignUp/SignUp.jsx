@@ -122,7 +122,7 @@ const SignUp = () => {
   };
 
   const loginhandle = () => {
-    navigate("/");
+    navigate("/SignIn");
   };
 
   return (
@@ -201,7 +201,9 @@ const SignUp = () => {
           </CardActions>
           <div className="last-option">
             <div style={{ fontFamily: 'Inter', fontWeight: '400' }}>Already have an account?</div>
-            <div style={{ fontFamily: 'Inter', fontWeight: '400' }}>Sign in</div>
+            <div style={{ fontFamily: 'Inter', fontWeight: '600',cursor:'pointer' }}><a onClick={loginhandle} >
+                Sign In
+              </a></div>
           </div>
         </Card>
       </div>

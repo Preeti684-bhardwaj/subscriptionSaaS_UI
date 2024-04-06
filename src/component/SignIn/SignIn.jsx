@@ -176,9 +176,9 @@ const SignIn = ({ setIsAuthenticated}) => {
           </CardActions>
           <div className="signIn-last-option">
             <div style={{ fontFamily: 'Inter', fontWeight: '400' }}>Don't have an account?</div>
-            <div style={{ fontFamily: 'Inter', fontWeight: '400' }}><button className="signup" onClick={handlleSignup} >
+            <div style={{ fontFamily: 'Inter', fontWeight: '600',cursor:'pointer' }}><a onClick={handlleSignup} >
                 Sign Up
-              </button></div>
+              </a></div>
           </div>
         </Card>
       </div>
