@@ -48,7 +48,7 @@ const SignIn = ({ setIsAuthenticated}) => {
 
 
      if (!email.trim()) {
-      setEmailerr('EmailId cannot be empty'); // Frontend error for empty username
+      setEmailerr('*Email cannot be empty'); // Frontend error for empty username
       return;
     } else {
       setEmailerr(''); // Clear the frontend error when the username is not empty
@@ -56,7 +56,7 @@ const SignIn = ({ setIsAuthenticated}) => {
     
 
     if (!password.trim()) {
-      setPasswordErr('Password cannot be empty'); // Frontend error for empty username
+      setPasswordErr('*Password cannot be empty'); // Frontend error for empty username
       return;
     } else {
       setPasswordErr(''); // Clear the frontend error when the username is not empty
@@ -74,7 +74,7 @@ const SignIn = ({ setIsAuthenticated}) => {
     };
   
  
-    axios.post('https://stream.xircular.io/customer/signin',{details},{ headers: headerObject})
+    axios.post('https://stream.xircular.io/customer/signin',details,{ headers: headerObject})
     .then((res) => {
       // console.log("data",res);
       // Store the access token 
@@ -89,13 +89,13 @@ const SignIn = ({ setIsAuthenticated}) => {
       navigate('/'); // Use navigate 
     })
     .catch((err) => {
-      // console.log("siginerror",err)
-      if (err.response.data === "Customer not found.") {
-        setEmailerr(err.response.data);
+      console.log("siginerror",err.response.data.message)
+      if (err.response.data.message === "Customer not found.") {
+        setEmailerr(err.response.data.message);
       } 
-      else if (err.response.data === "Invalid password.") {
+      else if (err.response.data.message === "Invalid password.") {
         setPasswordErr(
-          err.response.data
+          err.response.data.message
         )
         }
         else {

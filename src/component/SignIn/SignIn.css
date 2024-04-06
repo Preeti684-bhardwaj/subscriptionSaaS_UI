@@ -6,7 +6,7 @@
   .signIn-page{
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 6rem;
   }
   .signIn-cardTitle{
     font-family: "Inter" !important;
