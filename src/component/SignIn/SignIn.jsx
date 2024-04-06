@@ -120,7 +120,7 @@ const SignIn = ({ setIsAuthenticated}) => {
         <Card className="signIn-card">
           <CardContent>
             <Typography className="signIn-cardTitle" component="div">
-              SignIn
+              Sign In
             </Typography>
             <Typography className="signIn-sub-Title" component="div">
             Please fill your detail to access your account.
