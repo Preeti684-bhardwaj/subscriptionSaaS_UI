@@ -7,7 +7,7 @@ const Navbar = () => {
  const navigate = useNavigate();
   return (
     <div className='navbar'>
-      <button className='signIn'>
+      <button className='signIn' onClick={() => navigate("/SignIn")}>
       Sign in
       </button>
       <button className='signUp' onClick={() => navigate("/SignUp")}>
