@@ -4,7 +4,7 @@
 
 }
 
-.signup {
+.signup-page {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -103,7 +103,7 @@
     /* .input-card{
         /* margin-left: 2rem; */
     /* }  */
-    .signup {
+    .signup-page {
       margin-top: 6rem !important;
     }
     /* .email-card{

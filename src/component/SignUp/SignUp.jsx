@@ -20,7 +20,7 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -127,7 +127,7 @@ export default function SignUp() {
 
   return (
     <div>
-      <div className="signup">
+      <div className="signup-page">
         <Card className="signup-card">
           <CardContent>
             <Typography className="cardTitle" component="div">
@@ -208,3 +208,5 @@ export default function SignUp() {
     </div>
   );
 }
+
+export default SignUp
