@@ -10,9 +10,9 @@ const Navbar = () => {
       <button className='signIn' onClick={() => navigate("/SignIn")}>
       Sign in
       </button>
-      <button className='signUp' onClick={() => navigate("/SignUp")}>
+      {/* <button className='signUp' onClick={() => navigate("/SignUp")}>
       Sign up
-      </button>
+      </button> */}
     </div>
   )
 }
