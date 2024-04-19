@@ -1,6 +1,11 @@
-import {atom} from 'recoil'
+import { atom } from 'recoil';
 
 export const selectedProductAtom = atom({
-    key:'selectedProductAtom',
-    default:{}
-})
+  key: 'selectedProduct',
+  default:'',
+});
+
+export const selectedPriceAtom = atom({
+  key: 'selectedPrice',
+  default: null,
+});

@@ -76,13 +76,17 @@ const SignIn = ({ setIsAuthenticated}) => {
  
     axios.post('https://stream.xircular.io/customer/signin',details,{ headers: headerObject})
     .then((res) => {
-      // console.log("data",res);
-      // Store the access token 
+      console.log("data",res.data);
+      // Store the access token
+      const userId=res.data.id 
+      const userName=res.data.email
       const accessToken = res.data.token;
-      // console.log("accesstoken",accessToken)
+      console.log("accesstoken",accessToken)
       localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('userId',userId)
+      localStorage.setItem('userName',userName)
 
-      // window.alert("success");
+      window.alert("success");
 
       setIsAuthenticated(true);
       

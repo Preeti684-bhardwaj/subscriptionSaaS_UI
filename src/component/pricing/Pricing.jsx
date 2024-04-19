@@ -3,25 +3,21 @@ import { Card, CardContent, Typography, Button, Tab } from "@mui/material";
 import "./Pricing.css";
 import Navbar from "../navbar/Navbar";
 import { useRecoilState } from "recoil";
-import { selectedProductAtom } from "../../recoil/store";
-import { useNavigate } from "react-router-dom";
-// import {loadStripe} from '@stripe/stripe-js';
+import { selectedProductAtom, selectedPriceAtom } from "../../recoil/store"; // Import the selectedPriceAtom
+import PayButton from "../PayButton";
 
 export default function Pricing() {
   const [selectedOption, setSelectedOption] = useState("monthly");
-  const [selectedProduct, setSelectedProduct] =
-    useRecoilState(selectedProductAtom);
+  const [selectedProduct, setSelectedProduct] = useRecoilState(selectedProductAtom);
+  const [selectedPrice, setSelectedPrice] = useRecoilState(selectedPriceAtom); // Use the selectedPriceAtom
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
- 
-  const handlePurchase = (product) => () => {
-    setSelectedProduct(product);
-    console.log(product); // Update this line
-    navigate("/checkout");
-  };
+  console.log(selectedProduct);
+  console.log(selectedPrice);
+  // console.log(selectedProduct);
+  // console.log(selectedPrice);
 
   const fetchData = async () => {
     try {
@@ -114,7 +110,7 @@ export default function Pricing() {
             id: "3",
             name: "Premium",
             description: "Unlock advanced features for professionals",
-            currency: "INR",
+            currency: "USD",
             features: [
               "Full access",
               "Priority support",
@@ -160,6 +156,7 @@ export default function Pricing() {
         currentPage: 0,
       };
 
+      console.log(jsonData)
       setData(jsonData);
       setLoading(false);
     } catch (error) {
@@ -167,7 +164,6 @@ export default function Pricing() {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -224,30 +220,26 @@ export default function Pricing() {
         <div className="plans">
           <Tab
             label="Monthly plans"
-            className={`monthly ${
-              selectedOption === "monthly" ? "selected" : ""
-            }`}
+            className={`monthly ${selectedOption === "monthly" ? "selected" : ""
+              }`}
             onClick={() => handleOptionClick("monthly")}
           />
           <Tab
             label="Quarterly plans"
-            className={`quarterly ${
-              selectedOption === "quarterly" ? "selected" : ""
-            }`}
+            className={`quarterly ${selectedOption === "quarterly" ? "selected" : ""
+              }`}
             onClick={() => handleOptionClick("quarterly")}
           />
           <Tab
             label="Half-Yearly plans"
-            className={`half-yearly ${
-              selectedOption === "half-yearly" ? "selected" : ""
-            }`}
+            className={`half-yearly ${selectedOption === "half-yearly" ? "selected" : ""
+              }`}
             onClick={() => handleOptionClick("half-yearly")}
           />
           <Tab
             label="Yearly plans"
-            className={`annually ${
-              selectedOption === "annually" ? "selected" : ""
-            }`}
+            className={`annually ${selectedOption === "annually" ? "selected" : ""
+              }`}
             onClick={() => handleOptionClick("annually")}
           />
         </div>
@@ -272,7 +264,7 @@ export default function Pricing() {
               </Typography>
               <Typography
                 variant="h3"
-                style={{ fontSize: "20px", fontWeight: 400 }}
+                style={{ fontSize: "25px", fontWeight: 400 }}
               >
                 {new Intl.NumberFormat("en-US", {
                   style: "currency",
@@ -291,9 +283,12 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Button variant="contained" className="subscribe" onClick={handlePurchase(product)}>
-                Subscribe
-              </Button>
+              <PayButton
+                planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedOption).price}
+                features={product.features}
+                planName={product.name}
+                description={product.description}
+              />
             </CardContent>
           </Card>
         ))}
