@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, Typography, Button, Tab } from "@mui/material";
+import { Card, CardContent, Typography,CardActions } from "@mui/material";
 import "./Pricing.css";
 import Navbar from "../navbar/Navbar";
 import { useRecoilState } from "recoil";
@@ -7,7 +7,7 @@ import { selectedProductAtom, selectedPriceAtom } from "../../recoil/store"; // 
 import PayButton from "../PayButton";
 
 export default function Pricing() {
-  const [selectedOption, setSelectedOption] = useState("monthly");
+  const [selectedTab, setSelectedTab] = useState("monthly");
   const [selectedProduct, setSelectedProduct] = useRecoilState(selectedProductAtom);
   const [selectedPrice, setSelectedPrice] = useRecoilState(selectedPriceAtom); // Use the selectedPriceAtom
   const [data, setData] = useState(null);
@@ -168,9 +168,9 @@ export default function Pricing() {
     fetchData();
   }, []);
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-  };
+  // const handleOptionClick = (option) => {
+  //   setSelectedOption(option);
+  // };
 
   // const makePayment = async()=>{
   //   const stripe=await loadStripe(process.env.REACT_PUBLISHABLE_KEY)
@@ -190,9 +190,12 @@ export default function Pricing() {
   if (error) {
     return <div>Error fetching data: {error}</div>;
   }
+  const handleTabClick = (tab) => {
+    setSelectedTab(tab);
+  };
 
   const getPriceLabel = (plan) => {
-    switch (selectedOption) {
+    switch (selectedTab) {
       case "monthly":
         return "month";
       case "annually":
@@ -213,35 +216,26 @@ export default function Pricing() {
         <h1> Pricing Plans </h1>
         <p className="title-description">
           Find the ideal pricing plan to suit your needs with our flexible
-          options and dedicated support
+          options
+        </p>
+        <p className="title-description02">
+          and our dedicated supported
         </p>
       </div>
       <div className="plan-type">
         <div className="plans">
-          <Tab
-            label="Monthly plans"
-            className={`monthly ${selectedOption === "monthly" ? "selected" : ""
-              }`}
-            onClick={() => handleOptionClick("monthly")}
-          />
-          <Tab
-            label="Quarterly plans"
-            className={`quarterly ${selectedOption === "quarterly" ? "selected" : ""
-              }`}
-            onClick={() => handleOptionClick("quarterly")}
-          />
-          <Tab
-            label="Half-Yearly plans"
-            className={`half-yearly ${selectedOption === "half-yearly" ? "selected" : ""
-              }`}
-            onClick={() => handleOptionClick("half-yearly")}
-          />
-          <Tab
-            label="Yearly plans"
-            className={`annually ${selectedOption === "annually" ? "selected" : ""
-              }`}
-            onClick={() => handleOptionClick("annually")}
-          />
+          <div className={`tab ${selectedTab === 'monthly' ? 'active' : ''}`} onClick={() => handleTabClick('monthly')}>
+            Monthly plans
+          </div>
+          <div className={`tab ${selectedTab === 'quarterly' ? 'active' : ''}`} onClick={() => handleTabClick('quarterly')}>
+            Quarterly plans
+          </div>
+          <div className={`tab ${selectedTab === 'half-yearly' ? 'active' : ''}`} onClick={() => handleTabClick('half-yearly')}>
+            Half-Yearly plans
+          </div>
+          <div className={`tab ${selectedTab === 'annually' ? 'active' : ''}`} onClick={() => handleTabClick('annually')}>
+            Yearly plans
+          </div>
         </div>
       </div>
       <div className="pricing-plans">
@@ -251,7 +245,7 @@ export default function Pricing() {
               <Typography
                 variant="h3"
                 component="h2"
-                style={{ fontFamily: "Inter" }}
+                style={{ fontFamily: "Inter" ,fontWeight:'400',fontSize:'1.5rem'}}
               >
                 {product.name}
               </Typography>
@@ -262,34 +256,36 @@ export default function Pricing() {
               >
                 {product.description}
               </Typography>
+              <ul className="features">
+                {product.features.map((feature, index) => (
+                  <li key={index} className="feature-list">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
               <Typography
                 variant="h3"
-                style={{ fontSize: "25px", fontWeight: 400 }}
+                style={{ fontSize: "1.5rem", fontWeight: 600 }}
               >
                 {new Intl.NumberFormat("en-US", {
                   style: "currency",
                   currency: product.currency,
                 }).format(
                   product.subscriptionPlans.find(
-                    (plan) => plan.frequency === selectedOption
+                    (plan) => plan.frequency === selectedTab
                   ).price
                 )}{" "}
                 / {getPriceLabel(product.subscriptionPlans[0])}
               </Typography>
-              <ul>
-                {product.features.map((feature, index) => (
-                  <li key={index} className="feature">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+            </CardContent>
+            <CardActions>
               <PayButton
-                planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedOption).price}
+                planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedTab).price}
                 features={product.features}
                 planName={product.name}
                 description={product.description}
               />
-            </CardContent>
+            </CardActions>
           </Card>
         ))}
       </div>

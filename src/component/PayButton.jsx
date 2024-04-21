@@ -31,23 +31,23 @@ const PayButton = ({ planPrice, features, planName, description }) => {
       planName,
       description,
       userId: userId,
-      userName:userName
+      userName: userName
     })
-    .then((res) => {
-      if(res.data.url) {
-        // Redirect to the checkout URL returned by the server
-        window.location.href = res.data.url;
-      }
-    })
-    .catch((err) => console.log(err.message));
+      .then((res) => {
+        if (res.data.url) {
+          // Redirect to the checkout URL returned by the server
+          window.location.href = res.data.url;
+        }
+      })
+      .catch((err) => console.log(err.message));
   };
 
   return (
     <div>
-      <Button variant="contained" className="subscribe" onClick={handlePurchase}>
-        Subscribe
-      </Button>
-    </div>
+        <Button variant="contained" className="subscribe"  style={{ textTransform: 'none' ,width:'19rem'}} onClick={handlePurchase}>
+          Subscribe
+        </Button>
+      </div>
   );
 };
 

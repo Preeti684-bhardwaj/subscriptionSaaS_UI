@@ -18,71 +18,58 @@
   font-size: 18px;
   font-weight: 400;
   color: #333333;
-  margin-top: 0;
+  margin-top: -1rem;
+}
+.title-description02{
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  color: #333333;
+  margin-top: -1rem;
 }
 .plan-type {
   display: flex !important;
   text-align: center !important;
   justify-content: center !important;
 }
-.plans {
+/* .plans {
   display: flex !important;
-  /* width: 35rem; */
+  width: 32rem;
   text-align: center !important;
   justify-content: center !important;
   background-color: #e6e6e6;
   border-radius: 0.5rem;
+} */
+.plans {
+  display: flex;
+  justify-content: space-around;
+  /* border-bottom: 1px solid #ccc; */
+  background-color: #e6e6e6;
+  border-radius: 0.5rem;
 }
+
+.tab {
+  /* padding: 10px 20px; */
+  padding: 9px 9px;
+  margin-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #1A1A1A;
+  font-family: "Inter" !important;
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+
+.tab.active {
+  background-color: white; /* Change background color to white */
+  color: #1A1A1A; /* Change text color to indicate selection */
+  border-radius: 0.5rem;
+}
+
 .no-plans {
   margin-top: 15rem;
-}
-.monthly {
-  margin: 3px !important;
-  cursor: pointer;
-  /* justify-content: center; */
-  font-family: "Inter" !important;
-  font-weight: 600 !important;
-  font-size: 16px;
-  padding: 5px 5px !important;
-  text-transform: none !important;
-}
-.annually {
-  margin: 3px !important;
-  cursor: pointer;
-  font-family: "Inter" !important;
-  font-weight: 600 !important;
-  padding: 5px 5px !important;
-  font-size: 16px;
-  text-transform: none !important;
-}
-.quarterly {
-  margin: 3px !important;
-  cursor: pointer;
-  font-family: "Inter" !important;
-  padding: 5px 5px !important;
-  font-weight: 600 !important;
-  font-size: 16px;
-  text-transform: none !important;
-}
-.half-yearly {
-  margin: 3px !important;
-  /* margin-top: 0.4rem; */
-  cursor: pointer;
-  font-family: "Inter" !important;
-  padding: 5px 5px !important;
-  font-weight: 600 !important;
-  font-size: 16px;
-  text-transform: none !important;
-}
-.selected {
-  background: #ffffff !important;
-  border-radius: 0.3rem !important;
-  cursor: pointer;
-  /* font-family: "Inter" !important;
-  padding: 5px 5px !important;
-  font-weight: 600 !important;
-  font-size: 16px;
-  text-transform: none !important; */
 }
 .pricing-plans {
   display: flex;
@@ -102,14 +89,29 @@
   border: 1px solid #7b35d4; /* Set border */
   border-radius: 0.5rem;
 }
-.feature {
+.features {
+  list-style-type: none; /* Remove default list item marker */
+  padding: 0; /* Remove default padding */
+}
+
+.feature-list {
+  font-family: "Inter"; /* Use Inter font */
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px; /* Add margin between features */
+}
+
+.feature-list::before {
+  content: "\2713"; /* Unicode character for checkmark */
+  margin-right: 8px; /* Add spacing between checkmark and text */
+  color: #56C5D5;
 }
 .subscribe {
   font-family: "Inter" !important;
   font-weight: 600 !important;
   background: linear-gradient(90deg, #7b34d4 0%, #54ced6 100%);
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 290px) and (max-width: 600px) {
   .pricing-heading {
     font-family: "Inter" !important;
     margin-top: 1rem;
@@ -123,30 +125,22 @@
   .plans {
     background-color: #e6e6e6;
   }
-  .monthly {
-    width: 0 !important;
-    margin: 0.5px !important;
-    font-size: small !important;
-  }
-  .annually {
-    width: 0 !important;
-    margin: 0.5px !important;
-    font-size: small !important;
-  }
-  .half-yearly {
-    width: 0 !important;
-    margin: 0.5px !important;
-    font-size: small !important;
-  }
-  .quarterly {
-    width: 0 !important;
-    margin: 0.5px !important;
-    font-size: small !important;
-  }
-  .selected {
-    margin: 2px !important;
+  .tab {
+    /* padding: 10px 20px; */
+    padding: 5px 5px; /* Adjust padding */
+    font-size: 12px;
   }
   .pricing-plans {
     margin-left: -2rem !important;
   }
+}
+@media screen and (max-width: 285px){
+.pricing-plans {
+    margin-left: -1rem !important;
+}
+.tab {
+  /* padding: 10px 20px; */
+  padding: 4px 4px 2px 2px; /* Adjust padding */
+  font-size: 10px;
+}
 }
