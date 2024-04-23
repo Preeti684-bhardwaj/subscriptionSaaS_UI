@@ -18,15 +18,15 @@ import "./SignIn.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = ({ setIsAuthenticated}) => {
+const SignIn = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [emailerr, setEmailerr] = useState("");
   const [PasswordErr, setPasswordErr] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
- 
+
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -47,13 +47,13 @@ const SignIn = ({ setIsAuthenticated}) => {
     e.preventDefault();
 
 
-     if (!email.trim()) {
+    if (!email.trim()) {
       setEmailerr('*Email cannot be empty'); // Frontend error for empty username
       return;
     } else {
       setEmailerr(''); // Clear the frontend error when the username is not empty
     }
-    
+
 
     if (!password.trim()) {
       setPasswordErr('*Password cannot be empty'); // Frontend error for empty username
@@ -61,56 +61,56 @@ const SignIn = ({ setIsAuthenticated}) => {
     } else {
       setPasswordErr(''); // Clear the frontend error when the username is not empty
     }
-    
+
 
     const details = {
       email: email,
       password: password,
     };
-  
+
     const headerObject = {
       "Content-Type": "application/json",
       Accept: "*/*",
     };
-  
- 
-    axios.post('https://stream.xircular.io/customer/signin',details,{ headers: headerObject})
-    .then((res) => {
-      console.log("data",res.data);
-      // Store the access token
-      const userId=res.data.id 
-      const userName=res.data.email
-      const accessToken = res.data.token;
-      console.log("accesstoken",accessToken)
-      localStorage.setItem('accessToken', accessToken);
-      localStorage.setItem('userId',userId)
-      localStorage.setItem('userName',userName)
 
-      window.alert("success");
 
-      setIsAuthenticated(true);
-      
-      navigate('/'); // Use navigate 
-    })
-    .catch((err) => {
-      console.log("siginerror",err.response.data.message)
-      if (err.response.data.message === "Customer not found.") {
-        setEmailerr(err.response.data.message);
-      } 
-      else if (err.response.data.message === "Invalid password.") {
-        setPasswordErr(
-          err.response.data.message
-        )
+    axios.post('https://stream.xircular.io/customer/signin', details, { headers: headerObject })
+      .then((res) => {
+        console.log("data", res.data);
+        // Store the access token
+        const userId = res.data.id
+        const userName = res.data.email
+        const accessToken = res.data.token;
+        console.log("accesstoken", accessToken)
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('userId', userId)
+        localStorage.setItem('userName', userName)
+
+        window.alert("success");
+
+        setIsAuthenticated(true);
+
+        navigate('/'); // Use navigate 
+      })
+      .catch((err) => {
+        console.log("siginerror", err.response.data.message)
+        if (err.response.data.message === "Customer not found.") {
+          setEmailerr(err.response.data.message);
+        }
+        else if (err.response.data.message === "Invalid password.") {
+          setPasswordErr(
+            err.response.data.message
+          )
         }
         else {
-        // Handle other types of errors or set a generic error message
-        setEmailerr("");
-        setPasswordErr("")
-      }
-    });
+          // Handle other types of errors or set a generic error message
+          setEmailerr("");
+          setPasswordErr("")
+        }
+      });
   }
 
-  const handlleSignup = () =>{
+  const handlleSignup = () => {
     navigate('/SignUp')
   }
 
@@ -127,7 +127,7 @@ const SignIn = ({ setIsAuthenticated}) => {
               Sign In
             </Typography>
             <Typography className="signIn-sub-Title" component="div">
-            Please fill your detail to access your account.
+              Please fill your detail to access your account.
             </Typography>
 
             <div className="signIn-input-card">
@@ -140,8 +140,10 @@ const SignIn = ({ setIsAuthenticated}) => {
                   type="search"
                   value={email}
                   onChange={handleEmailChange}
+                  placeholder="Enter your email"
                 />
-                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' ,marginBottom:'0px'}}>
+
+                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter', marginBottom: '0px' }}>
                   {emailerr}
                 </div>
               </div>
@@ -167,7 +169,7 @@ const SignIn = ({ setIsAuthenticated}) => {
                     }
                   />
                 </FormControl>
-                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter' ,marginBottom:'0px'}}>
+                <div style={{ color: "red", fontSize: "12px", fontFamily: 'Inter', marginBottom: '0px' }}>
                   {PasswordErr}
                 </div>
               </div>
@@ -180,13 +182,13 @@ const SignIn = ({ setIsAuthenticated}) => {
           </CardActions>
           <div className="signIn-last-option">
             <div style={{ fontFamily: 'Inter', fontWeight: '400' }}>Don't have an account?</div>
-            <div style={{ fontFamily: 'Inter', fontWeight: '600',cursor:'pointer' }}><a onClick={handlleSignup} >
-                Sign Up
-              </a></div>
+            <div style={{ fontFamily: 'Inter', fontWeight: '600', cursor: 'pointer' }}><a onClick={handlleSignup} >
+              Sign Up
+            </a></div>
           </div>
         </Card>
       </div>
-      </div>
+    </div>
   )
 }
 
