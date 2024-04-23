@@ -81,7 +81,11 @@
   margin-top: 1rem;
   width: 20rem;
   margin-left: 2rem;
-  position: relative; /*Add position relative*/
+  position: relative; 
+  display: flex;/*Add position relative*/
+  justify-content: space-between;
+  flex-direction: column;
+
 }
 
 .pricing-plan:hover {
@@ -104,7 +108,7 @@
 .feature-list::before {
   content: "\2713"; /* Unicode character for checkmark */
   margin-right: 8px; /* Add spacing between checkmark and text */
-  color: #56C5D5;
+  color:#56C5D5 ;
 }
 .subscribe {
   font-family: "Inter" !important;
