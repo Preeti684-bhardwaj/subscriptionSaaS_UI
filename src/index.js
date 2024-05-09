@@ -1,18 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
+import { hydrate, render } from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
-  </React.StrictMode>
-);
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+    hydrate(<RecoilRoot> <App /> </RecoilRoot>, rootElement);
+} else {
+    render(<RecoilRoot> <App /> </RecoilRoot>, rootElement);
+}
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

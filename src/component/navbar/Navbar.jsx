@@ -21,6 +21,7 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
+    
       {/* Render the "Sign in" button if accessToken does not exist */}
       {!accessToken && (
         <button className='signIn' onClick={() => navigate("/SignIn")}>
