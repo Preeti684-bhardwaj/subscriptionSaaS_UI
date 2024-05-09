@@ -25,7 +25,7 @@ const PayButton = ({ planPrice, features, planName, description }) => {
     }
 
     // Both accessToken and userId are available, proceed with creating checkout session
-    axios.post("https://subscriptionplan-server.onrender.com/create-checkout-session", {
+    axios.post("http://localhost:4242/create-checkout-session", {
       planPrice,
       features,
       planName,
