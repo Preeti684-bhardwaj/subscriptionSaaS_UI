@@ -13,7 +13,7 @@
   font-family: "Inter";
   font-weight: 1000;
 }
-.title-description {
+.title-description01 {
   font-family: "Inter";
   font-size: 18px;
   font-weight: 400;
@@ -120,7 +120,7 @@
     font-family: "Inter" !important;
     margin-top: 1rem;
   }
-  .title-description {
+  .title-description01 {
     margin-left: 1rem;
   }
   .plan-type {

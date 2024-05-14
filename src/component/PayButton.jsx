@@ -44,11 +44,11 @@ const PayButton = ({ planPrice, features, planName, description }) => {
   };
 
   return (
-    <div>
+       <div>
         <Button variant="contained" className="subscribe"  style={{ textTransform: 'none' ,width:'19rem'}} onClick={handlePurchase}>
           Subscribe
         </Button>
-      </div>
+       </div>
   );
 };
 

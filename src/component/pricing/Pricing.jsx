@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Card, CardContent, Typography,CardActions } from "@mui/material";
 import "./Pricing.css";
 import Navbar from "../navbar/Navbar";
 import { useRecoilState } from "recoil";
 import { selectedProductAtom, selectedPriceAtom } from "../../recoil/store"; // Import the selectedPriceAtom
-import PayButton from "../PayButton";
+
+const PayButton = lazy(() => import('../PayButton'));
+
+const renderLoader = () => <p>Loading</p>;
 
 export default function Pricing() {
   const [selectedTab, setSelectedTab] = useState("monthly");
@@ -214,7 +217,7 @@ export default function Pricing() {
       <Navbar />
       <div className="pricing-heading">
         <h1> Pricing Plans </h1>
-        <p className="title-description">
+        <p className="title-description01">
           Find the ideal pricing plan to suit your needs with our flexible
           options
         </p>
@@ -278,13 +281,15 @@ export default function Pricing() {
                 / {getPriceLabel(product.subscriptionPlans[0])}
               </Typography>
             </CardContent>
-            <CardActions>
-              <PayButton
+            <CardActions>          
+            <Suspense fallback={renderLoader()}>
+               <PayButton
                 planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedTab).price}
                 features={product.features}
                 planName={product.name}
                 description={product.description}
-              />
+                />
+            </Suspense>
             </CardActions>
           </Card>
         ))}
