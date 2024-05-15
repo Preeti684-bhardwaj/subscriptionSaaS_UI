@@ -49,9 +49,10 @@ function App() {
   
   useEffect(() => {
     const loadStripePromise = async () => {
+      
       const stripe = await loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
-      setStripePromise(stripe);
-    };
+          setStripePromise(stripe);
+      };
     
     loadStripePromise();
   }, []);
