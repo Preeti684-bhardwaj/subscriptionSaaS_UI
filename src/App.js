@@ -11,6 +11,25 @@ import CheckoutSuccess from './component/CheckoutSuccess';
 import CheckoutFail from './component/CheckoutFail';
 import NotFound from './component/NotFound';
 
+
+const workerCode = `
+  import { loadStripe } from '@stripe/stripe-js';
+
+  const handleMessage = async (event) => {
+    const { publishableKey } = event.data;
+
+    try {
+      const stripe = await loadStripe(publishableKey);
+      self.postMessage({ stripe });
+    } catch (error) {
+      console.error('Failed to load Stripe:', error);
+      self.postMessage({ error: error.toString() });
+    }
+  };
+
+  self.addEventListener('message', handleMessage);
+`;
+
 function App() {
   const [ stripePromise, setStripePromise ] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,26 +58,36 @@ function App() {
     localStorage.removeItem('accessToken');
     
     // Set isAuthenticated to false 
-    setIsAuthenticated(false);
-    
-    
+    setIsAuthenticated(false); 
     setEmailVerified(false);
-    
-    
+     
   };
   
+
   useEffect(() => {
+    let cancelled = false;
+  
     const loadStripePromise = async () => {
-      
-      const stripe = await loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
+      try {
+        const { loadStripe } = await import('@stripe/stripe-js');
+        const stripe = await loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
+        if (!cancelled) {
           setStripePromise(stripe);
-      };
-    
+        }
+      } catch (error) {
+        console.error('Failed to load Stripe:', error);
+      }
+    };
+  
     loadStripePromise();
+  
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-
   
+
   return (
     <Router>
       <div className="App">
