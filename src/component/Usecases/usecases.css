@@ -11,7 +11,7 @@
   justify-content: center;
   flex-direction: column;
   gap:3rem;
-  padding: 0px 25px;
+  padding: 0px 15px;
 
 }
 
@@ -24,18 +24,17 @@
 
 
 .grid-container {
-       width: 90%;
         display: grid;
         align-items: center;
         justify-content: center;
         grid-template-columns: repeat(auto-fit, minmax(46vw, 1fr));
-        gap: 2.7rem;
+        gap: 3rem;
   }
   
   .grid-item {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap:2rem;
+        gap:3rem;
 
   }
   
@@ -55,14 +54,14 @@
   }
   
   .image img {
-    width: 100%;
+    width: 90%;
     height: 44vh;
     box-shadow: 7px 8px 10px #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
   }
   
       .content{
-          padding:  0px 30px;
+          padding:  0px 50px;
           display: flex;
           align-items: flex-start;
           justify-content: center;
