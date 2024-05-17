@@ -1,6 +1,6 @@
 body {
   background-image: url(../src/component/pricing/Home.png);
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
 
 }
@@ -10,8 +10,10 @@ body {
     background-image: url(../src/component/pricing/mobileHome1.png);
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom:5rem;
-  }}
+
+  }
+
+}
 
 /* @media screen and (max-width: 600px) {
   body{
