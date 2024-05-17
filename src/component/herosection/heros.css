@@ -1,0 +1,63 @@
+
+
+.herosection{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    margin:20px 0px;
+  
+}
+
+
+.contentpart{
+        flex: 1;
+        width: 100%;
+        padding: 15px 75px;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        font-family: "Inter";
+        letter-spacing: 0.1rem;
+        margin-top: -50px;
+}
+
+ .contentpart h1{
+  font-size: 2.3rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+.contentpart h3{
+    font-size: 1.34rem;
+    line-height: 2.22rem;
+    font-weight: 400;
+}
+
+
+.picturepart{
+    flex: 1;
+    overflow: hidden;
+    height: 100vh;
+ 
+}
+
+.picturepart  img{
+     margin-top: -50px;
+     width: 100%;
+     object-fit: fill;
+     animation: bouncing 1s ease-out 1;
+}
+
+@keyframes bouncing {
+            from {
+                transform: translateY(20px);
+             }
+
+            to {
+                transform: translateY(0);
+             }
+
+  }

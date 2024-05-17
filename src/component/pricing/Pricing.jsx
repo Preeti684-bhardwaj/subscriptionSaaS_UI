@@ -1,7 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Card, CardContent, Typography,CardActions } from "@mui/material";
 import "./Pricing.css";
-import Navbar from "../navbar/Navbar";
 import { useRecoilState } from "recoil";
 import { selectedProductAtom, selectedPriceAtom } from "../../recoil/store"; // Import the selectedPriceAtom
 
@@ -213,8 +212,7 @@ export default function Pricing() {
   };
 
   return (
-    <div>
-      <Navbar />
+    <div  className="pricing-container">
       <div className="pricing-heading">
         <h1> Pricing Plans </h1>
         <p className="title-description01">

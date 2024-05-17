@@ -1,10 +1,21 @@
 .navbar{
+    margin: 0;
+    padding: 0px 15px;
+    width: 100%;
+    height: 60px;
     display: flex;
     /* flex-direction: column; */
-    justify-content:flex-end;
-    gap: 1rem;
-    margin-right: 1.5rem;
+    justify-content:space-between;
 }
+
+
+    .logowrapper img {
+         width: 100%;
+         height: 68px;
+    }
+
+
+
 .signIn{
     width: 5rem;
     height: 2rem;
@@ -13,7 +24,8 @@
     border: 1px solid #7B34D4 ;
     color: #7B34D4;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 0.7rem;
+    margin-right: 2rem;
 }
 .signUp{
     width: 5rem;
@@ -24,5 +36,6 @@
     color: #FFFFFF;
     cursor: pointer;
     background-color: #7B34D4;
-    margin-top: 1rem;
+    margin-top: 0.7rem;
+    margin-right: 2rem;
 }

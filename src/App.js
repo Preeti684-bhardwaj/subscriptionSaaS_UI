@@ -6,36 +6,16 @@ import SignIn from './component/SignIn/SignIn';
 import {loadStripe} from '@stripe/stripe-js'; 
 import { Elements } from "@stripe/react-stripe-js";
 // import CheckoutForm from '';
-import './App.css'
 import CheckoutSuccess from './component/CheckoutSuccess';
 import CheckoutFail from './component/CheckoutFail';
 import NotFound from './component/NotFound';
-
-
-const workerCode = `
-  import { loadStripe } from '@stripe/stripe-js';
-
-  const handleMessage = async (event) => {
-    const { publishableKey } = event.data;
-
-    try {
-      const stripe = await loadStripe(publishableKey);
-      self.postMessage({ stripe });
-    } catch (error) {
-      console.error('Failed to load Stripe:', error);
-      self.postMessage({ error: error.toString() });
-    }
-  };
-
-  self.addEventListener('message', handleMessage);
-`;
+import Home from './Home';
 
 function App() {
   const [ stripePromise, setStripePromise ] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [emailVerified, setEmailVerified] = useState(false); 
   const [clientSecret, setClientSecret] = useState("");
-  
   
   useEffect(() => {
     // Checking  authentication status over here, checking by looking at a token in local storage
@@ -86,15 +66,14 @@ function App() {
     };
   }, []);
 
-  
+
 
   return (
     <Router>
-      <div className="App">
       {/* {clientSecret && ( */}
         {/* // <Elements stripe={stripePromise}> */}
           <Routes>
-            <Route path="/" element={<Pricing/>} />
+            <Route path="/" element={<Home />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/SignIn" element={<SignIn setIsAuthenticated={ setIsAuthenticated }/>} />
             {/* <Route path="/checkout" element={<CheckoutForm/>} /> */}
@@ -104,7 +83,6 @@ function App() {
           </Routes>
           {/* // </Elements> */}
            {/* )} */}
-      </div>
     </Router>
   );
 }
