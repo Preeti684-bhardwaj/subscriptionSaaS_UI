@@ -5,6 +5,8 @@ import Herosection from './component/herosection/Herosection'
 import './App.css'
 import Uniqueus from './component/Uniqueus/Uniqueus'
 import Usecases from './component/Usecases/Usecases'
+import Intro from './component/Introsection/Intro'
+import FreeTrialBanner from './component/Freetrialbanner/FreeTrialBanner'
 
 
 const Home = () => {
@@ -15,6 +17,9 @@ const Home = () => {
          <Herosection />
          
            <div className='main' >
+
+               <Intro />
+
                 <Uniqueus />
 
                 <Usecases />
@@ -22,6 +27,8 @@ const Home = () => {
                 <Pricing /> 
               
            </div>
+
+           <FreeTrialBanner />
     
      </div>
   )

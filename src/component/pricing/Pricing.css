@@ -1,26 +1,21 @@
 
 .pricing-container{
-     margin:  50px 0px;
+     margin:  100px 0px;
      width: 100%;
 }
 
-.inter-title-description {
-  font-family: "Inter";
-  font-optical-sizing: 56px;
-  font-weight: 900;
-  font-style: normal;
-}
 .pricing-heading {
   text-align: center;
   margin-top:4px;
   margin-bottom: 20px;
 }
+
 .pricing-heading h1{
   margin-top:0;
   font-family: "Inter";
-  font-weight: 1000;
+  font-weight: 700;
 }
-.title-description01 {
+.description01 {
   margin-top: 10px;
   font-family: "Inter";
   font-size: 18px;
@@ -28,7 +23,7 @@
   color: #333333;
   line-height: 21px;
 }
-.title-description02{
+.description02{
   font-family: "Inter";
   font-size: 18px;
   font-weight: 400;
@@ -51,29 +46,25 @@
 .plans {
   display: flex;
   justify-content: space-around;
-  /* border-bottom: 1px solid #ccc; */
   background-color: #e6e6e6;
-  border-radius: 0.5rem;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .tab {
-  /* padding: 10px 20px; */
-  padding: 9px 9px;
-  margin-right: 8px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: 8px;
+  padding: 12px 20px;
+  text-align: center;
   cursor: pointer;
   color: #1A1A1A;
   font-family: "Inter" !important;
   font-weight: 400 !important;
-  font-size: 14px;
+  font-size: 1rem;
+  border-radius: 8px;
 }
 
 .tab.active {
   background-color: white; /* Change background color to white */
   color: #1A1A1A; /* Change text color to indicate selection */
-  border-radius: 0.5rem;
 }
 
 .no-plans {
@@ -128,7 +119,7 @@
     font-family: "Inter" !important;
     margin-top: 1rem;
   }
-  .title-description01 {
+  .description01 {
     margin-left: 1rem;
   }
   .plan-type {

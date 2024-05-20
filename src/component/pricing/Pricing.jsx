@@ -215,11 +215,11 @@ export default function Pricing() {
     <div  className="pricing-container">
       <div className="pricing-heading">
         <h1> Pricing Plans </h1>
-        <p className="title-description01">
+        <p className="description01">
           Find the ideal pricing plan to suit your needs with our flexible
           options
         </p>
-        <p className="title-description02">
+        <p className="description02">
           and our dedicated supported
         </p>
       </div>

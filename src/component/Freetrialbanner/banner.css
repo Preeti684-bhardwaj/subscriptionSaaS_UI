@@ -1,0 +1,47 @@
+
+
+.freetrialcontainer{
+    margin: 100px 0px;
+    background-color:#372459fb;
+}
+
+
+.freetrialwrapper{
+    width: 100%;
+    padding: 70px 10px;
+    color: #fff;
+}
+
+.freetrialcontent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+
+   .freetrialcontent h2{
+            font-weight: 700;
+            font-size: 2.43rem;
+            line-height: 2.3rem;
+            letter-spacing: 0.15rem;
+   }
+
+     .freetrialcontent  p{
+            font-weight: 400;
+            font-size: 1.28rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.08rem;
+    }
+
+      #freetrialbtn{
+            padding:12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.16rem;
+            letter-spacing: 1px;
+            font-family: "inter";
+            border: none;
+
+      }
