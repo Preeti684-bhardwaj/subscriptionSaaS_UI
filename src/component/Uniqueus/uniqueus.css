@@ -1,6 +1,6 @@
 
 .uniqueussection{
-    margin: 30px;
+    margin: 30px  50px;
 }
 
 .uniqueuswrapper h2 {
@@ -13,20 +13,26 @@
 .cardswrapper{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
 .cards{
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     display: grid;
     grid-template-rows: subgrid;
     gap: 2rem;
     grid-row: span 1;
+
 }
+
+.cards:hover {
+    border: 2px solid purple;
+}
+
 
 
       .headsec img {

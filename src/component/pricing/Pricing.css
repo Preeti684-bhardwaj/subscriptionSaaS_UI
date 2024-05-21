@@ -1,6 +1,6 @@
 
 .pricing-container{
-     margin:  100px 0px;
+     margin:  100px 20px;
      width: 100%;
 }
 
@@ -34,6 +34,7 @@
   display: flex !important;
   text-align: center !important;
   justify-content: center !important;
+  margin-top: 2rem;
 }
 /* .plans {
   display: flex !important;
@@ -70,20 +71,24 @@
 .no-plans {
   margin-top: 15rem;
 }
+
 .pricing-plans {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
+      margin: 1rem 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+      gap: 1.5rem;
+    
 }
+
 .pricing-plan {
   margin-top: 1rem;
   width: 20rem;
-  margin-left: 2rem;
-  position: relative; 
-  display: flex;/*Add position relative*/
-  justify-content: space-between;
-  flex-direction: column;
+  padding: 10px 10px 10px 20px;
+  display: grid;
+  grid-template-rows: subgrid;
+  gap: 1rem;
+  grid-row: span 2;
+  text-align: center;
 
 }
 
@@ -109,11 +114,14 @@
   margin-right: 8px; /* Add spacing between checkmark and text */
   color:#56C5D5 ;
 }
+
 .subscribe {
   font-family: "Inter" !important;
   font-weight: 600 !important;
   background: linear-gradient(90deg, #7b34d4 0%, #54ced6 100%);
 }
+
+
 @media screen and (min-width: 290px) and (max-width: 600px) {
   .pricing-heading {
     font-family: "Inter" !important;
@@ -121,9 +129,6 @@
   }
   .description01 {
     margin-left: 1rem;
-  }
-  .plan-type {
-
   }
   .plans {
     background-color: #e6e6e6;
@@ -136,7 +141,9 @@
   .pricing-plans {
     margin-left: -2rem !important;
   }
+
 }
+
 @media screen and (max-width: 285px){
 .pricing-plans {
     margin-left: -1rem !important;

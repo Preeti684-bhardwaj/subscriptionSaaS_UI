@@ -45,7 +45,7 @@ const PayButton = ({ planPrice, features, planName, description }) => {
 
   return (
        <div>
-        <Button variant="contained" className="subscribe"  style={{ textTransform: 'none' ,width:'19rem'}} onClick={handlePurchase}>
+        <Button variant="contained" className="subscribe"  style={{ textTransform: 'none' ,width:'17rem'}} onClick={handlePurchase}>
           Subscribe
         </Button>
        </div>

@@ -246,7 +246,7 @@ export default function Pricing() {
               <Typography
                 variant="h3"
                 component="h2"
-                style={{ fontFamily: "Inter" ,fontWeight:'400',fontSize:'1.5rem'}}
+                style={{ fontFamily: "Inter" ,fontWeight:'400',fontSize:'1.5rem',marginBottom:'12px'}}
               >
                 {product.name}
               </Typography>
@@ -266,7 +266,7 @@ export default function Pricing() {
               </ul>
               <Typography
                 variant="h3"
-                style={{ fontSize: "1.5rem", fontWeight: 600 }}
+                style={{ fontSize: "1.67rem", fontWeight: 600 , marginTop:'8px'}}
               >
                 {new Intl.NumberFormat("en-US", {
                   style: "currency",
