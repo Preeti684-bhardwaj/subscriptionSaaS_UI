@@ -1,63 +1,149 @@
 
 
-.herosection{
-    width: 100%;
-    display:flex;
-    align-items: center;
-    justify-content:space-around;
-    margin:20px 0px;
-  
-}
+    .herosection{
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        display:flex;
+        align-items: center;
+        justify-content:center;
+
+    }
+
+    .contentpart{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            flex-direction: column;
+            gap: 0.5rem;
+    }
+
+    .contentpart h1{
+                color: #071D34;
+                font-size: var(--size-4xl);
+                font-weight: 800;
+                line-height:normal;
+    }
+
+        #aipart{
+            color: #E87211;
+        }
+
+        .heropart{
+            display: flex;
+            gap:6px;
+            align-items: center;
+        }
+
+            .heropart img{
+                    width: 2rem;
+                    height: 2rem;
+            }
+
+        .contentpart h2{
+                color: #071D34;
+                text-align: center;
+                font-size: var(--size-2xl);
+                font-weight: 700;
+                line-height: normal;
+        }
 
 
-.contentpart{
-        flex: 1;
-        width: 100%;
-        padding: 15px 75px;
-        text-align: left;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 20px;
-        font-family: "Inter";
-        letter-spacing: 0.1rem;
-        margin-top: -50px;
-}
-
- .contentpart h1{
-  font-size: 2.3rem;
-  line-height: 2.5rem;
-  font-weight: 600;
-}
-
-.contentpart h3{
-    font-size: 1.34rem;
-    line-height: 2.22rem;
-    font-weight: 400;
-}
+        .contentpart h3{
+                padding-top: 1rem;
+                padding-bottom: 0.8rem;
+                color: #1B1818;
+                text-align: center;
+                font-size: var(--size-base);
+                font-weight: 300;
+                line-height: normal;
+        }
 
 
-.picturepart{
-    flex: 1;
-    overflow: hidden;
-    height: 100vh;
- 
-}
+        #freetrailbtn{
+                display: flex;
+                padding: 10px 20px;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                border-radius: 12px;
+                background: #12D30E;
+                color: #FFF;
+                text-align: center;
+                font-size: var(--size-base);
+                font-weight: 600;
+                line-height: normal;
+        }
 
-.picturepart  img{
-     margin-top: -50px;
-     width: 100%;
-     object-fit: fill;
-     animation: bouncing 1s ease-out 1;
-}
 
-@keyframes bouncing {
-            from {
-                transform: translateY(20px);
-             }
 
-            to {
-                transform: translateY(0);
-             }
+        /* xs */
+        /* @media (min-width: 475px) {} */
 
-  }
+        /* sm */
+        /* @media (min-width: 640px) {} */
+
+        /* md */
+          @media (min-width: 768px) {
+
+                    .contentpart h1{
+                        font-size: var(--size-6xl);
+                    }
+
+                   .contentpart h2{
+                        font-size: var(--size-4xl);
+                   }
+
+                    .contentpart h3{
+                            padding-top: 1.5rem;
+                            padding-bottom: 1rem;
+                            font-size: var(--size-2xl);
+                            max-width: 46ch;
+                    }
+
+                    #freetrailbtn{
+                                padding: 16px 34px;
+                                font-size: var(--size-xl);
+                    }
+
+          }
+
+        /* lg */
+           @media (min-width: 1024px) {
+
+                .heropart{
+                    gap:0.9rem;
+                }
+
+                 .heropart img{
+                       width: 4rem;
+                       height: 4rem;
+                }
+
+                .contentpart h1{
+                    font-size: var(--size-7xl);
+                }
+
+                .contentpart h2{
+                    font-size: var(--size-5xl);
+               }
+    
+                .contentpart h3{
+                        padding-top: 1.5rem;
+                        padding-bottom: 1rem;
+                        font-size: var(--size-3xl);
+                        max-width: 46ch;
+                }
+
+                 #freetrailbtn{
+                            padding: 16px 34px;
+                            font-size: var(--size-2xl);
+                }
+
+          }
+
+        /* xl */
+        /* @media (min-width: 1280px) {} */
+
+        /* 2xl */
+        /* @media (min-width: 1536px) {} */

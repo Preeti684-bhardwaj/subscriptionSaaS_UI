@@ -1,58 +1,112 @@
 
-.uniqueussection{
-    margin: 30px  50px;
+.uniqueussec  {
+    padding-left: 1rem;
+    padding-right: 1rem; 
 }
 
 .uniqueuswrapper h2 {
-   text-align: center;
-   font-weight: 600;
-   font-size: 2.16rem;
-   font-family: "Inter";
-}
-
-.cardswrapper{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
-    gap: 2.5rem;
-    margin-top: 2rem;
-}
-
-.cards{
+    margin-top: 1rem;
+    color: #061C2D;
     text-align: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: grid;
-    grid-template-rows: subgrid;
-    gap: 2rem;
-    grid-row: span 1;
-
+    font-size: var(--size-2xl);
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
 }
 
-.cards:hover {
-    border: 2px solid purple;
-}
+    .cardswrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
 
+    .cards{
+        text-align: center;
+        padding: 2rem 0.9rem;
+        border-radius: 1rem;
+        background: #FFF;
+        box-shadow: 12px 12px 80px 0px #F9E5FF;
+        display: grid;
+        grid-template-rows: subgrid;
+        gap: 1.5rem;
+        grid-row: span 1;
 
+    }
 
-      .headsec img {
-            max-width: 100%;
-            height: 70px;
+        .cards:hover {
+            border: 2px solid #9B51E0;
         }
 
+        .headsec{
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+      .headsec img {
+            width: 2rem;
+            height: 2rem;
+        }
+        
+        .cardsinfo {
+            text-align: center;
+            font-style: normal;
+        }
 
     .cardsinfo h3{
-         font-family: "inter";
-         font-size: 1.5rem;
-         font-weight: 600;
-         line-height: 4rem;
-         color: #25292D;
+            padding-top: 1.4rem;
+            padding-bottom: 1rem;
+            color: #061C2D;
+            font-size: var(--size-xl);
+            font-weight: 800;
+            line-height: normal;
     }
 
     .cardsinfo p{
-        color: #62686f;;
-        font-family: "inter";
-        font-size: 1.1rem;
-        font-weight: 400;
-        line-height: 1.7rem;
+            color: #061C2D;
+            font-size: var(--size-base);
+            font-weight: 300;
+            line-height: normal;
     }
+
+
+    /* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+
+     .cardswrapper{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+     .uniqueuswrapper h2 {
+        font-size: var(--size-4xl);
+    }
+
+     .cards{
+        padding: 2.5rem 1.2rem;
+     }
+
+     .cardsinfo h3{
+        font-size: var(--size-2xl);
+    }
+
+     .cardsinfo p{
+            font-size: var(--size-xl);
+     }
+
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

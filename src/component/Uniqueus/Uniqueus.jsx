@@ -1,13 +1,13 @@
 import React from 'react'
 import './uniqueus.css'
-import ivideoicon from './laptop-video-editing-icon.png';
-import  logic from './administrator-developer-icon.png';
-import  aiinsights from './audit-icon.png'
+import ivideoicon from './Group.png';
+import  logic from './branchlogic.png';
+import  aiinsights from './Vector.png'
 
 
 const Uniqueus = () => {
   return (
-    <div className='uniqueussection'>
+    <div className='uniqueussec container section'>
     
      <div className='uniqueuswrapper'>
       
