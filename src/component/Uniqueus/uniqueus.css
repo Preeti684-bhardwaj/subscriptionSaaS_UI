@@ -1,18 +1,18 @@
 
-.uniqueussec  {
-    padding-left: 1rem;
-    padding-right: 1rem; 
-}
+    .uniqueussec  {
+        padding-left: 1rem;
+        padding-right: 1rem; 
+    }
 
-.uniqueuswrapper h2 {
-    margin-top: 1rem;
-    color: #061C2D;
-    text-align: center;
-    font-size: var(--size-2xl);
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
+    .uniqueuswrapper h2 {
+        margin-top: 1rem;
+        color: #061C2D;
+        text-align: center;
+        font-size: var(--size-2xl);
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
 
     .cardswrapper{
         display: grid;
@@ -23,7 +23,7 @@
 
     .cards{
         text-align: center;
-        padding: 2rem 0.9rem;
+        padding: 2.5rem 1rem;
         border-radius: 1rem;
         background: #FFF;
         box-shadow: 12px 12px 80px 0px #F9E5FF;
