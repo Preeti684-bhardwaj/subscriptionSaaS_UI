@@ -25,30 +25,30 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.45rem;
         }
 
         .freetrialcontent h2{
             color: #EDF6FF;
-            font-size: var(--size-2xl);
+            font-size: var(--size-3xl);
             font-style: normal;
             font-weight: 700;
         }
 
         .freetrialcontent p{
             color: #EDF6FF;
-            font-size: var(--size-lg);
+            font-size: var(--size-xl);
             font-style: normal;
             font-weight: 300;
         }
 
         #freetrialbtn{
             display: flex;
-            padding: 1rem 2.3rem;
+            padding: 14px 20px;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            border-radius: 2rem;
+            gap: 8px;
+            border-radius: 18px;
             background: #FFF;
             color: #12D30E;
             text-align: center;
@@ -77,6 +77,7 @@
             .freetrialwrapper{
                 display: flex;
                 flex-direction: row;
+                gap: 3rem;
                 padding: 2.5rem  6rem;
                 border-radius: 2rem;
             }
@@ -105,8 +106,10 @@
             }
 
             #freetrialbtn{
+                padding: 1.25rem  2.25rem;
+                gap: 15px;
+                border-radius: 1.25rem;
                 font-size: var(--size-2xl);
-                padding: 1.5rem 2.5rem;
                 font-weight: 700;
             }
 

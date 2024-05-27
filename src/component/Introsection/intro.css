@@ -1,12 +1,11 @@
      
         .intro{
           margin-top: 1rem;
+          margin-bottom: 3rem;
         }
 
         .introwrapper{
               width: 100%;
-              padding-left: 1rem;
-              padding-right: 1rem;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -22,11 +21,12 @@
   
       .introvideowrapper video{
                 width: 100%;
-                height: 35vh;
+                height: 33.56vh;
                 object-fit: fill;
                 border-radius: 1rem;
                 border: 4px solid #061C33;
         }
+
 
         .demovideotag {
           display:flex;
@@ -63,6 +63,8 @@
         }
 
           #shineiconwrapper{
+                width: 2.5rem;
+                height: 2.5rem;
                 position: absolute;
                 top: -1rem;
                 right:-0.5rem;
@@ -133,6 +135,7 @@
               .intro{
                 margin-top: 1.5rem;
               }
+
               .introvideowrapper video{
                     width: 100%;
                     height: 78vh;

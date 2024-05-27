@@ -1,8 +1,8 @@
 import React from 'react'
 import './uniqueus.css'
-import ivideoicon from './Group.png';
-import  logic from './branchlogic.png';
-import  aiinsights from './Vector.png'
+import ivideoicon from './Interactive video.png';
+import  logic from './Branching logic.png';
+import  aiinsights from './AI-Powered Insights.png'
 
 
 const Uniqueus = () => {

@@ -1,29 +1,23 @@
 
-    .uniqueussec  {
-        padding-left: 1rem;
-        padding-right: 1rem; 
-    }
 
     .uniqueuswrapper h2 {
-        margin-top: 1rem;
         color: #061C2D;
         text-align: center;
-        font-size: var(--size-2xl);
+        font-size: var(--size-3xl);
         font-style: normal;
         font-weight: 800;
-        line-height: normal;
     }
 
     .cardswrapper{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
         gap: 1.5rem;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 
     .cards{
         text-align: center;
-        padding: 2.5rem 1rem;
+        padding: 2rem 1.2rem;
         border-radius: 1rem;
         background: #FFF;
         box-shadow: 12px 12px 80px 0px #F9E5FF;
@@ -44,8 +38,8 @@
         }
 
       .headsec img {
-            width: 2rem;
-            height: 2rem;
+            width: 4.5rem;
+            height: 4.5rem;
         }
         
         .cardsinfo {
@@ -57,21 +51,27 @@
             padding-top: 1.4rem;
             padding-bottom: 1rem;
             color: #061C2D;
-            font-size: var(--size-xl);
+            font-size: var(--size-2xl);
             font-weight: 800;
             line-height: normal;
     }
 
     .cardsinfo p{
             color: #061C2D;
-            font-size: var(--size-base);
+            font-size: var(--size-lg);
             font-weight: 300;
             line-height: normal;
     }
 
 
     /* xs */
-/* @media (min-width: 475px) {} */
+@media (min-width: 475px) {
+
+
+
+
+
+}
 
 /* sm */
 /* @media (min-width: 640px) {} */

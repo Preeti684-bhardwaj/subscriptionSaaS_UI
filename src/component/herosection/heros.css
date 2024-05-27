@@ -62,15 +62,15 @@
 
         #freetrailbtn{
                 display: flex;
-                padding: 10px 20px;
                 justify-content: center;
                 align-items: center;
-                gap: 12px;
-                border-radius: 12px;
+                gap: 10px;
+                padding: 14px 21px;
+                border-radius: 21px;
                 background: #12D30E;
                 color: #FFF;
                 text-align: center;
-                font-size: var(--size-base);
+                font-size: var(--size-lg);
                 font-weight: 600;
                 line-height: normal;
         }
@@ -104,6 +104,7 @@
                     #freetrailbtn{
                                 padding: 16px 34px;
                                 font-size: var(--size-xl);
+                              
                     }
 
           }
@@ -132,12 +133,13 @@
                         padding-top: 1.5rem;
                         padding-bottom: 1rem;
                         font-size: var(--size-3xl);
-                        max-width: 46ch;
+                        max-width: 45ch;
                 }
 
                  #freetrailbtn{
-                            padding: 16px 34px;
-                            font-size: var(--size-2xl);
+                            padding: 18px 32px;
+                            font-size: var(--size-3xl);
+                            border-radius: 1.9rem;
                 }
 
           }

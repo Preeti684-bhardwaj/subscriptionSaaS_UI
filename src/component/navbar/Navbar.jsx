@@ -21,7 +21,7 @@ const Navbar = () => {
   const Name = userName ? extractNameFromEmail(userName) : '';
 
   return (
-    <div className='navbar container'>
+    <div className='navbar'>
 
       <div className='logowrapper'>
         <img src={logo}  alt="Online video survey maker" />
