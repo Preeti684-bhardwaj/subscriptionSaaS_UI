@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './intro.css';
 import demo from './demo.mp4';
 import portal from './Icon.png';
@@ -6,18 +6,50 @@ import dmtag from './training-video-icon 1.png';
 import fstag from './fullscreen.png';
 
 const Intro = () => {
+
+  const videoRef = useRef(null);
+  const fullscreenBtnRef = useRef(null);
+
+  const handleVideoClick = () => {
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+    } else {
+      videoRef.current.pause();
+    }
+  };
+  
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      videoRef.current.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
+
   return (
     <div className='intro container'>
     
       <div className='introwrapper'>
-
+      
           <div className='videosec'>
           <div className='introvideowrapper'>
-            <video  autoPlay muted >
+            <video  
+              autoPlay 
+              muted 
+              loop  
+              ref={videoRef}
+              onClick={handleVideoClick}>
             <source src={demo} type="video/mp4"></source>
             </video>
               <div className="demovideotag"> <img src={dmtag} width={15}  height={16} alt="Online customer surveying tool" /> <span> Demo video </span> </div>
-              <button id="fullscreenbtn"> <img src={fstag} alt="Online customer surveying solution"  /> </button>
+               <button 
+                id="fullscreenbtn"
+                ref={fullscreenBtnRef}
+                onClick={toggleFullscreen} > 
+              <img src={fstag} alt="Online customer surveying solution"  /> 
+              </button>
           </div>
           </div>
 
