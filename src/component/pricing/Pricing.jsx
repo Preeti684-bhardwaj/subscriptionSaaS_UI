@@ -275,12 +275,13 @@ export default function Pricing() {
                 </div>
 
               <Suspense fallback={renderLoader()}>
-                  <PayButton
-                    planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedTab).price}
-                    features={product.features}
-                    planName={product.name}
-                    description={product.description}
-                    />
+                <PayButton
+                  planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedTab).price}
+                  features={product.features}
+                  planName={product.name}
+                  frequency={selectedTab}
+                  description={product.description}
+                  />
               </Suspense>
 
            </div>
