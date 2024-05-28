@@ -73,8 +73,8 @@ const SignIn = ({ setIsAuthenticated }) => {
       Accept: "*/*",
     };
 
-
-    axios.post('https://stream.xircular.io/customer/signin', details, { headers: headerObject })
+               
+    axios.post('https://stream.xircular.io/api/v1/customer/signin', details, { headers: headerObject })
       .then((res) => {
         console.log("data", res.data);
         // Store the access token

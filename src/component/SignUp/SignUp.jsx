@@ -97,7 +97,7 @@ const SignUp = () => {
       "Content-Type": "application/json",
       Accept: "*/*",
     };
-    const SignUpApi = "https://stream.xircular.io/customer/signup";
+    const SignUpApi = "https://stream.xircular.io/api/v1/customer/signup";
 
     axios
       .post(SignUpApi, item, { headers: headerObject })
