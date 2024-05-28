@@ -212,85 +212,84 @@ export default function Pricing() {
   };
 
   return (
-    <div  className="pricing-container">
+    <div  className="pricingcnt container section">
+
+     <div className="pricingcntwrapper">
+
       <div className="pricing-heading">
-        <h1> Pricing Plans </h1>
-        <p className="description01">
-          Find the ideal pricing plan to suit your needs with our flexible
-          options
-        </p>
-        <p className="description02">
-          and our dedicated supported
-        </p>
-      </div>
+        <h2 id="pricingtitle"> Pricing </h2>
+        <p id="pricingdesc"> Find the ideal pricing plan to suit your needs with our flexible options and our dedicated supported </p>
+       </div>
+
       <div className="plan-type">
-        <div className="plans">
+        <div className="planswrapper">
+
           <div className={`tab ${selectedTab === 'monthly' ? 'active' : ''}`} onClick={() => handleTabClick('monthly')}>
-            Monthly plans
+            Monthly 
           </div>
           <div className={`tab ${selectedTab === 'quarterly' ? 'active' : ''}`} onClick={() => handleTabClick('quarterly')}>
-            Quarterly plans
+            Quarterly 
           </div>
           <div className={`tab ${selectedTab === 'half-yearly' ? 'active' : ''}`} onClick={() => handleTabClick('half-yearly')}>
-            Half-Yearly plans
+            Half-Yearly
           </div>
           <div className={`tab ${selectedTab === 'annually' ? 'active' : ''}`} onClick={() => handleTabClick('annually')}>
-            Yearly plans
+            Annual
           </div>
+
         </div>
       </div>
+
       <div className="pricing-plans">
+
         {data.products.map((product) => (
-          <Card key={product.id} className="pricing-plan">
-            <CardContent>
-              <Typography
-                variant="h3"
-                component="h2"
-                style={{ fontFamily: "Inter" ,fontWeight:'400',fontSize:'1.5rem',marginBottom:'12px'}}
-              >
-                {product.name}
-              </Typography>
-              <Typography
-                variant="body1"
-                color="#525252"
-                style={{ fontFamily: "Inter", fontWeight: "400" }}
-              >
-                {product.description}
-              </Typography>
-              <ul className="features">
+
+          <div key={product.id} className="pricing-card">
+
+              <h2 id="subcrpname">  {product.name} </h2>
+
+               <p id="subcrpprice">
+                  <strong id="subpricestrong">
+                    { new Intl.NumberFormat("en-US", {
+                      style: "currency",
+                      currency: product.currency,
+                      }).format(
+                      product.subscriptionPlans.find(
+                        (plan) => plan.frequency === selectedTab
+                      ).price
+                    )}   {" "}  / 
+                  </strong> 
+                   { getPriceLabel(product.subscriptionPlans[0]) }
+               </p>
+
+              <span id="subcrpdescp"> {product.description} </span>
+
+                <div className="featureswrapper">
+                <ul className="features">
                 {product.features.map((feature, index) => (
                   <li key={index} className="feature-list">
                     {feature}
                   </li>
-                ))}
-              </ul>
-              <Typography
-                variant="h3"
-                style={{ fontSize: "1.67rem", fontWeight: 600 , marginTop:'8px'}}
-              >
-                {new Intl.NumberFormat("en-US", {
-                  style: "currency",
-                  currency: product.currency,
-                }).format(
-                  product.subscriptionPlans.find(
-                    (plan) => plan.frequency === selectedTab
-                  ).price
-                )}{" "}
-                / {getPriceLabel(product.subscriptionPlans[0])}
-              </Typography>
-            </CardContent>
-            <CardActions>          
-            <Suspense fallback={renderLoader()}>
-               <PayButton
-                planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedTab).price}
-                features={product.features}
-                planName={product.name}
-                description={product.description}
-                />
-            </Suspense>
-            </CardActions>
-          </Card>
-        ))}
+                  ))}
+                </ul>
+                </div>
+
+              <Suspense fallback={renderLoader()}>
+                  <PayButton
+                    planPrice={product.subscriptionPlans.find(plan => plan.frequency === selectedTab).price}
+                    features={product.features}
+                    planName={product.name}
+                    description={product.description}
+                    />
+              </Suspense>
+
+           </div>
+
+          ))
+        }
+      </div>
+
+
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ const Home = () => {
           <Intro />
           <Uniqueus />
           <Usecases />
+          <Pricing />
           <FreeTrialBanner />       
      </>
   )

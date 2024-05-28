@@ -1,157 +1,225 @@
 
-.pricing-container{
-     margin:  100px 20px;
-     width: 100%;
-}
+      .pricingcntwrapper{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap:3rem;
+      }
 
-.pricing-heading {
-  text-align: center;
-  margin-top:4px;
-  margin-bottom: 20px;
-}
+      .pricing-heading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap:1.5rem;
+      }
 
-.pricing-heading h1{
-  margin-top:0;
-  font-family: "Inter";
-  font-weight: 700;
-}
+      #pricingtitle {
+        color: #061C2D;
+        text-align: center;
+        font-size: var(--size-3xl);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 2rem;
+    }
 
-.description01 {
-  margin-top: 10px;
-  font-family: "Inter";
-  font-size: 18px;
-  font-weight: 400;
-  color: #333333;
-  line-height: 21px;
-}
-.description02{
-  font-family: "Inter";
-  font-size: 18px;
-  font-weight: 400;
-  color: #333333;
-  line-height: 21px;
-}
-.plan-type {
-  display: flex !important;
-  text-align: center !important;
-  justify-content: center !important;
-  margin-top: 2rem;
-}
-/* .plans {
-  display: flex !important;
-  width: 32rem;
-  text-align: center !important;
-  justify-content: center !important;
-  background-color: #e6e6e6;
-  border-radius: 0.5rem;
-} */
-.plans {
-  display: flex;
-  justify-content: space-around;
-  background-color: #e6e6e6;
-  border-radius: 8px;
-  padding: 10px;
-}
+      #pricingdesc{
+        max-width: 80vw;
+        color: #1B1818;
+        text-align: center;
+        font-size: var(--size-base);
+        font-style: normal;
+        font-weight: 300;
+    }
 
-.tab {
-  padding: 12px 20px;
-  text-align: center;
-  cursor: pointer;
-  color: #1A1A1A;
-  font-family: "Inter" !important;
-  font-weight: 400 !important;
-  font-size: 1rem;
-  border-radius: 8px;
-}
 
-.tab.active {
-  background-color: white; /* Change background color to white */
-  color: #1A1A1A; /* Change text color to indicate selection */
-}
+    .planswrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #F5F5F5;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+    }
 
-.no-plans {
-  margin-top: 15rem;
-}
+    .tab {
+      padding: 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 0.3rem;
+      color: #676767;
+      text-align: center;
+      font-size: var(--size-sm);
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
 
-.pricing-plans {
-      margin: 1rem 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
-      gap: 1.5rem;
+    .tab.active {
+      background-color: #fff; 
+      color: #E87211; 
+      font-weight: 700;
+    }
+
+
+    .pricing-plans {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+          gap: 2rem; 
+          justify-content: center; 
+          align-items: center;    
+    }
+
+    .pricing-card {
+        margin-top: 1rem;
+        padding: 2rem 1rem;
+        display: grid;
+        grid-template-rows: subgrid;
+        gap: 1.5rem;
+        grid-row: span 5;
+        border-radius: 1rem;
+        background: #FFF;
+        box-shadow: 16.48px 16.48px 54.933px 0px #F9E5FF;
+
+    }
+
+    .pricing-card:hover {
+        transform: scale(1.05); 
+        border: 1px solid #7b35d4; 
+    }
+
+     #subcrpname{
+      text-align: center;
+      color: #9B51E0;
+      text-align: center;
+      font-size: var(--size-2xl);
+      font-style: normal;
+      font-weight: 800;
+    }
+
+      #subcrpprice{
+        text-align: center;
+        color: #061C2D;
+        font-size: var(--size-3xl);
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+      }
+      #subpricestrong{
+        font-weight: 800;
+      }
+      
+      #subcrpdescp{
+          text-align: center;
+          color: #676767;
+          text-align: center;
+          font-size: var(--size-xl);
+          font-style: normal;
+          font-weight: 300;
+      }
+
+       .featureswrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+       }
+
+        .features {
+          list-style-type: none; /* Remove default list item marker */
+          padding: 0; /* Remove default padding */
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .feature-list {
+          color: #353535;
+          font-size: var(--size-xl);
+          font-style: normal;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+       
+        }
+
+        .feature-list::before {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #12D30E;
+          width: 1.25rem;
+          height: 1.25rem;
+          padding: 0.85rem;
+          border-radius: 100%;
+          content: "\2713";
+          margin-right: 0.62rem; 
+          color:#fff ;
+        }
+
+        .subcrpbtnwrapper{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .subscribebtn {
+          width: 12rem;
+          border-radius: 0.9rem;
+          background: #E87211;
+          color: #FFF;
+          text-align: center;
+          padding: 1rem 2rem;
+          font-size: var(--size-base);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+
+        .pricing-heading{
+            gap: 2rem;
+        }
+
+        #pricingtitle{
+            font-size: var(--size-4xl);
+        }
+
+        #pricingdesc{
+          max-width: 80vw;
+          font-size: var(--size-3xl);
+        }
+
+        .planswrapper {
+          border-radius: 1rem;
+          padding: 0.75rem;
+        }
     
-}
-
-.pricing-plan {
-  margin-top: 1rem;
-  width: 20rem;
-  padding: 10px 10px 10px 20px;
-  display: grid;
-  grid-template-rows: subgrid;
-  gap: 1rem;
-  grid-row: span 2;
-  text-align: center;
+        .tab {
+          padding: 1.15rem 2rem;
+          border-radius: 1.07rem;
+          font-size: var(--size-2xl);
+        }
 
 }
 
-.pricing-plan:hover {
-  transform: scale(1.05); /* Enlarge the card on hover */
-  border: 1px solid #7b35d4; /* Set border */
-  border-radius: 0.5rem;
-}
-.features {
-  list-style-type: none; /* Remove default list item marker */
-  padding: 0; /* Remove default padding */
-}
+/* xl */
+/* @media (min-width: 1280px) {} */
 
-.feature-list {
-  font-family: "Inter"; /* Use Inter font */
-  font-weight: 400;
-  font-size: 14px;
-  margin-bottom: 8px; /* Add margin between features */
-}
-
-.feature-list::before {
-  content: "\2713"; /* Unicode character for checkmark */
-  margin-right: 8px; /* Add spacing between checkmark and text */
-  color:#56C5D5 ;
-}
-
-.subscribe {
-  font-family: "Inter" !important;
-  font-weight: 600 !important;
-  background: linear-gradient(90deg, #7b34d4 0%, #54ced6 100%);
-}
-
-
-@media screen and (min-width: 290px) and (max-width: 600px) {
-  .pricing-heading {
-    font-family: "Inter" !important;
-    margin-top: 1rem;
-  }
-  .description01 {
-    margin-left: 1rem;
-  }
-  .plans {
-    background-color: #e6e6e6;
-  }
-  .tab {
-    /* padding: 10px 20px; */
-    padding: 5px 5px; /* Adjust padding */
-    font-size: 12px;
-  }
-  .pricing-plans {
-    margin-left: -2rem !important;
-  }
-
-}
-
-@media screen and (max-width: 285px){
-.pricing-plans {
-    margin-left: -1rem !important;
-}
-.tab {
-  /* padding: 10px 20px; */
-  padding: 4px 4px 2px 2px; /* Adjust padding */
-  font-size: 10px;
-}
-}
+/* 2xl */
+/* @media (min-width: 1536px) {} */

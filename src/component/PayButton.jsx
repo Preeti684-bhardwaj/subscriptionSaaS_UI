@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React from 'react';
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const PayButton = ({ planPrice, features, planName, description }) => {
@@ -44,10 +43,10 @@ const PayButton = ({ planPrice, features, planName, description }) => {
   };
 
   return (
-       <div>
-        <Button variant="contained" className="subscribe"  style={{ textTransform: 'none' ,width:'17rem'}} onClick={handlePurchase}>
+       <div className='subcrpbtnwrapper'>
+        <button className="subscribebtn" onClick={handlePurchase}>
           Subscribe
-        </Button>
+        </button>
        </div>
   );
 };
