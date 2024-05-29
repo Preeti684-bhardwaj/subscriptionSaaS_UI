@@ -1,5 +1,4 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { Card, CardContent, Typography,CardActions } from "@mui/material";
 import "./Pricing.css";
 import { useRecoilState } from "recoil";
 import { selectedProductAtom, selectedPriceAtom } from "../../recoil/store"; // Import the selectedPriceAtom

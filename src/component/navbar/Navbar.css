@@ -7,13 +7,13 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2.25rem;
     }
 
 
     .logowrapper img {
          width: 100%;
-         height: 56px; 
+         height: 2.25rem; 
     }
 
     .userName{

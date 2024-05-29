@@ -1,7 +1,8 @@
 import React from 'react';
 import './Navbar.css';
 import { useNavigate } from "react-router-dom";
-import logo from './AIENGAGE 1.png';
+import logo from './aiengagelogo.png';
+
 
 const Navbar = () => {
   const navigate = useNavigate();

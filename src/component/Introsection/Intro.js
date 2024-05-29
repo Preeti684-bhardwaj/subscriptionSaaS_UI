@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import './intro.css';
 import demo from './demo.mp4';
+import demo2 from './demo2.mp4';
 import portal from './Icon.png';
 import dmtag from './training-video-icon 1.png';
 import fstag from './fullscreen.png';
@@ -41,7 +42,7 @@ const Intro = () => {
               loop  
               ref={videoRef}
               onClick={handleVideoClick}>
-            <source src={demo} type="video/mp4"></source>
+            <source src={demo2} type="video/mp4"></source>
             </video>
               <div className="demovideotag"> <img src={dmtag} width={15}  height={16} alt="Online customer surveying tool" /> <span> Demo video </span> </div>
                <button 
