@@ -1,8 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './freetrialbanner.css'
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const FreeTrialBanner = () => {
+
+          const [ data, setData ] = useState([]);
+          const accessToken = localStorage.getItem('accessToken');
+          const navigate = useNavigate();
+
+
+      const createfreetrail = async () => {
+
+                if(accessToken){
+                  try {
+                    const createfreetrailurl = 'https://stream.xircular.io/api/v1/customer/startTrial';
+                    const response = await axios.post(createfreetrailurl, {
+                      headers: {
+                        Authorization: `Bearer ${accessToken}`
+                      },
+                    });
+                    
+                        console.log("Free Trial Response",response);
+                        // setData(response.data.data);
+                        window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`
+
+                  } catch (error) {
+                    console.error('Error fetching data:', error);
+                  }
+                }
+                else{
+                          navigate("/SignUp");
+                }
+
+       };
+
+
   return (
     <div  className='freetrialcnt container section'>
     
@@ -21,7 +54,7 @@ const FreeTrialBanner = () => {
             <h2>Ready to take your surveys to the next level ? </h2>
             <p>Sign up for a free trial today and experience the power of interactive video and AI. </p>
             
-            <button id="freetrialbtn">
+            <button id="freetrialbtn" onClick={createfreetrail}>
 
             <svg width="31" height="21" viewBox="0 0 31 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.078 19.0768L12.4809 20.0149C13.5671 20.741 14.692 20.622 15.5261 20.0651C15.8451 19.8517 16.1183 19.576 16.3296 19.2545C16.6344 18.7943 16.8034 18.2485 16.8006 17.6944C17.0906 17.7294 17.3842 17.7181 17.6707 17.6609C19.1725 17.3607 20.1238 15.916 19.7433 14.407C19.7057 14.2579 19.6563 14.1121 19.5955 13.971C20.0804 14.077 20.5736 14.0649 21.0308 13.9459C21.7651 13.7534 22.4088 13.2868 22.7921 12.5811C23.5818 11.129 22.9334 9.35603 21.5249 8.58157C20.036 7.76065 19.8356 7.67509 19.6343 7.58865C19.4856 7.52449 19.3378 7.46038 18.4521 6.97879L26.9299 6.96947C27.1627 6.96947 27.3197 6.97601 27.5598 6.94905C28.2415 6.87187 28.8566 6.57253 29.3202 6.13276C30.5209 4.99387 30.52 3.14474 29.3165 2.0077C28.8353 1.55215 28.1943 1.25002 27.4841 1.18679C27.3068 1.17099 27.1876 1.17469 27.0195 1.17469L17.1673 1.18493C15.6692 1.18493 15.9832 0.52856 14.3226 0.247785C13.0785 0.036785 11.6035 -0.0199129 10.1635 0.109278C8.83726 0.228288 7.53683 0.505302 6.46637 0.963636C4.57571 1.77437 3.12751 3.04899 2.16413 4.56805C1.38652 5.79529 0.927446 7.17585 0.810136 8.59459C0.692825 10.0133 0.917274 11.4729 1.50285 12.86C2.2519 14.6292 3.5921 16.272 5.57139 17.5438C7.39182 18.7124 8.40319 18.9114 10.3778 19.2981L10.4194 19.3065C10.6725 19.3558 10.92 19.26 11.078 19.0768Z" fill="black"/>

@@ -107,6 +107,7 @@
         font-weight: 300;
         line-height: normal;
       }
+
       #subpricestrong{
         font-weight: 800;
       }
@@ -137,7 +138,7 @@
 
         .feature-list {
           color: #353535;
-          font-size: var(--size-xl);
+          font-size: var(--size-lg);
           font-style: normal;
           font-weight: 600;
           display: flex;
@@ -187,7 +188,64 @@
 /* @media (min-width: 640px) {} */
 
 /* md */
-/* @media (min-width: 768px) {} */
+@media (min-width: 768px) {
+
+          #pricingdesc {
+            max-width: 80vw;
+            font-size: var(--size-xl);
+        }
+
+        .pricingcntwrapper{
+           gap:1.5rem;
+        }
+
+        .pricing-plans {
+              margin-top: 0rem;
+              grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+              gap: 0.625rem; 
+       }
+
+        .pricing-card {
+          padding: 2rem 0.85rem;
+          display: grid;
+          grid-template-rows: subgrid;
+          gap: 0.85rem;
+          grid-row: span auto;
+          border-radius: 1rem;
+          box-shadow: 8.48px 8.48px 24.933px 0px #F9E5FF;
+        }
+
+
+      #subcrpname{
+        font-size: var(--size-xl);
+      }
+  
+        #subcrpprice{
+          font-size: var(--size-xl);
+        }
+        
+        #subcrpdescp{
+            font-size: var(--size-base);
+        }
+
+        .feature-list {
+          font-size: var(--size-sm);
+        }
+
+        .feature-list::before {
+          width: 1rem;
+          height: 1rem;
+          padding: 0.65rem;
+        }
+
+        .subscribebtn {
+          width: 10rem;
+          border-radius: 1rem;
+          padding: 0.85rem 2rem;
+        }
+
+}
+
 
 /* lg */
 @media (min-width: 1024px) {
@@ -210,10 +268,46 @@
           padding: 0.75rem;
         }
     
+        .pricingcntwrapper{
+             gap:3rem;
+         }
+
         .tab {
           padding: 1.15rem 2rem;
           border-radius: 1.07rem;
           font-size: var(--size-2xl);
+        }
+
+        #subcrpname{
+          font-size: var(--size-2xl);
+        }
+    
+          #subcrpprice{
+            font-size: var(--size-3xl);
+          }
+    
+          #subcrpdescp{
+              font-size: var(--size-xl);
+          }
+    
+
+        .feature-list {
+          font-size: var(--size-lg);
+        }
+
+          .feature-list::before {
+            width: 1.25rem;
+            height: 1.25rem;
+            padding: 0.85rem;
+            margin-right: 0.62rem; 
+          }
+
+
+        .subscribebtn {
+          width: 12rem;
+          border-radius: 0.9rem;
+          padding: 1rem 2rem;
+          font-size: var(--size-base);
         }
 
 }

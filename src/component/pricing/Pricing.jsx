@@ -251,7 +251,7 @@ export default function Pricing() {
 
       <div className="pricing-plans">
 
-        {subscriptiondata.map((plan) => (
+        {subscriptiondata.sort((a,b)=> a.price - b.price).map((plan) => (
 
           <div key={plan.product.id} className="pricing-card">
 
@@ -268,11 +268,13 @@ export default function Pricing() {
 
                 <div className="featureswrapper">
                 <ul className="features">
-                {plan.product.features.map((feature, index) => (
-                  <li key={index} className="feature-list">
-                    {feature}
+                  <li className="feature-list">
+                       Number of campaigns:  {plan.product.features['no.of campaign'] }
                   </li>
-                  ))}
+                  <li className="feature-list">
+                      Video length: {plan.product.features['video length']} sec
+                  </li>
+
                 </ul>
                 </div>
 
