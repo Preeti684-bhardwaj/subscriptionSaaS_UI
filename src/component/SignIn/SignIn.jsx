@@ -83,8 +83,8 @@ const SignIn = ({ setIsAuthenticated }) => {
         const accessToken = res.data.token;
         console.log("accesstoken", accessToken)
         localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('userId', userId)
-        localStorage.setItem('userName', userName)
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('userName', userName);
 
         window.alert("success");
 

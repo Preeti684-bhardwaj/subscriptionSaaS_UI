@@ -59,6 +59,17 @@
             line-height: normal;
         }
 
+        #freetrialbtn:hover {
+            background-color: #0056b3;
+          }
+          
+          #freetrialbtn:disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            border: 1px solid #999999;
+          }
+
 
 
 

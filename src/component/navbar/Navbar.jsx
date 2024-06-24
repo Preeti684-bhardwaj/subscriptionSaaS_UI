@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import logo from './aiengagelogo.png';
 
 const Navbar = () => {
-
       const navigate = useNavigate();
       // Retrieve accessToken from localStorage
       const accessToken = localStorage.getItem('accessToken');
       console.log("Acesss Token:", accessToken)
       const userName = localStorage.getItem('userName');
+      const [isSubscribed, setIsSubscribed] = useState(null);
+      const [isTrialActive, setIsTrialActive] = useState(null);
+
+
+      useEffect(() => {
+        // Fetch user subscription information only if accessToken is available
+        if (accessToken) {
+          axios.get('https://stream.xircular.io/api/v1/subscription/getCustomerSubscription', {
+            headers: { Authorization: `Bearer ${accessToken}` }
+          })
+          .then(response => {
+            const user = response.data[0]; // Adjust based on the actual response structure
+           console.log(user);
+            setIsSubscribed(user.isSubscribed);
+            setIsTrialActive(user.isTrialActive);
+          })
+          .catch(error => {
+            console.error("Error fetching user subscription data", error);
+          });
+        }
+      }, [accessToken]);
 
       // Define a function to extract the name from the email
       const extractNameFromEmail = (email) => {
@@ -40,7 +61,12 @@ const Navbar = () => {
       {userName && (   
             <div className='userName' >
               Welcome, {Name}    
-              <button style={{marginLeft:'1rem'}}  className='btn' onClick={() => window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`} > Go to Dashboard </button>  
+              <button 
+            style={{ marginLeft: '1rem' }} 
+            className='btn' 
+            onClick={() => window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`}
+            disabled={isSubscribed === false && isTrialActive === false}
+          > Go to Dashboard </button>  
             </div>   
           )}
 

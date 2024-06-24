@@ -1,61 +1,95 @@
-import React, { useState } from 'react'
-import './freetrialbanner.css'
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import "./freetrialbanner.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const FreeTrialBanner = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // State to manage loading state
+  const [isTrialActive, setIsTrialActive] = useState(false); // Assuming true initially
+  const accessToken = localStorage.getItem("accessToken");
+  const navigate = useNavigate();
 
-          const [ data, setData ] = useState([]);
-          const accessToken = localStorage.getItem('accessToken');
-          const navigate = useNavigate();
+  useEffect(() => {
+    const fetchSubscriptionStatus = async () => {
+      if (accessToken) {
+        try {
+          const subscriptionUrl =
+            "https://stream.xircular.io/api/v1/subscription/getCustomerSubscription";
+          const response = await axios.get(subscriptionUrl, {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
 
+          const { isTrialActive } = response.data[0];
+          setIsTrialActive(isTrialActive);
+        } catch (error) {
+          console.error("Error fetching subscription status:", error);
+        } finally {
+          setLoading(false); // Set loading to false after the API call is done
+        }
+      } else {
+        setLoading(false); // Set loading to false if no accessToken
+      }
+    };
 
-      const createfreetrail = async () => {
+    fetchSubscriptionStatus();
+  }, [accessToken]);
 
-                if(accessToken){
-                  try {
-                    const createfreetrailurl = 'https://stream.xircular.io/api/v1/customer/startTrial';
-                    const response = await axios.get(createfreetrailurl, {
-                      headers: {
-                        Authorization: `Bearer ${accessToken}`
-                      },
-                    });
+  const createfreetrail = async () => {
+    if (accessToken) {
+      try {
+        const createfreetrailurl =
+          "https://stream.xircular.io/api/v1/customer/startTrial";
+        const response = await axios.get(createfreetrailurl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
 
-                        console.log("Free Trial Response",response);
-                        // setData(response.data.data);
-                        window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`
-
-                  } catch (error) {
-                    console.error('Error fetching data:', error);
-                  }
-                }
-                else{
-                          navigate("/SignUp");
-                }
-
-       };
-
+        console.log("Free Trial Response", response);
+        // setData(response.data.data);
+        window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    } else {
+      navigate("/SignUp");
+    }
+  };
 
   return (
-    <div  className='freetrialcnt container section'>
-    
-      <div className='freetrialwrapper'>
-
-         <div className='freetrailiconwrapper'>
-        
-          <svg id="freetrialicon" xmlns="http://www.w3.org/2000/svg" width="160" height="161" viewBox="0 0 160 161" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M160 27.6976C160 41.0399 150.291 52.1142 137.552 54.2414C150.291 56.3686 160 67.4432 160 80.7852C160 94.1271 150.291 105.202 137.552 107.329C150.291 109.456 160 120.531 160 133.873C160 148.736 147.951 160.785 133.088 160.785C119.746 160.785 108.671 151.076 106.544 138.337C104.417 151.076 93.3419 160.785 80 160.785C66.6581 160.785 55.5834 151.076 53.4562 138.337C51.329 151.076 40.2547 160.785 26.9124 160.785C12.0491 160.785 0 148.736 0 133.873C0 120.531 9.7092 109.456 22.4476 107.329C9.7092 105.202 0 94.1271 0 80.7852C0 67.4432 9.7092 56.3686 22.4476 54.2414C9.7092 52.1142 0 41.0399 0 27.6976C0 12.8343 12.0491 0.785156 26.9124 0.785156C40.2547 0.785156 51.329 10.4944 53.4562 23.2327C55.5834 10.4944 66.6581 0.785156 80 0.785156C93.3419 0.785156 104.417 10.4944 106.544 23.2327C108.671 10.4944 119.746 0.785156 133.088 0.785156C147.951 0.785156 160 12.8343 160 27.6976ZM53.4562 32.1625C51.5716 43.4487 42.6635 52.3568 31.3773 54.2414C42.6635 56.126 51.5716 65.0344 53.4562 76.3206C55.3408 65.0344 64.2492 56.126 75.5355 54.2414C64.2492 52.3568 55.3408 43.4487 53.4562 32.1625ZM84.4645 54.2414C95.7508 52.3568 104.659 43.4487 106.544 32.1625C108.428 43.4487 117.337 52.3568 128.623 54.2414C117.337 56.126 108.428 65.0344 106.544 76.3206C104.659 65.0344 95.7508 56.126 84.4645 54.2414ZM106.544 129.408C108.428 118.122 117.337 109.214 128.623 107.329C117.337 105.444 108.428 96.5359 106.544 85.2497C104.659 96.5359 95.7508 105.444 84.4645 107.329C95.7508 109.214 104.659 118.122 106.544 129.408ZM53.4562 85.2497C55.3408 96.5359 64.2492 105.444 75.5355 107.329C64.2492 109.214 55.3408 118.122 53.4562 129.408C51.5716 118.122 42.6635 109.214 31.3773 107.329C42.6635 105.444 51.5716 96.5359 53.4562 85.2497Z" fill="#FFD9F2"/>
+    <div className="freetrialcnt container section">
+      <div className="freetrialwrapper">
+        <div className="freetrailiconwrapper">
+          <svg
+            id="freetrialicon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="160"
+            height="161"
+            viewBox="0 0 160 161"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M160 27.6976C160 41.0399 150.291 52.1142 137.552 54.2414C150.291 56.3686 160 67.4432 160 80.7852C160 94.1271 150.291 105.202 137.552 107.329C150.291 109.456 160 120.531 160 133.873C160 148.736 147.951 160.785 133.088 160.785C119.746 160.785 108.671 151.076 106.544 138.337C104.417 151.076 93.3419 160.785 80 160.785C66.6581 160.785 55.5834 151.076 53.4562 138.337C51.329 151.076 40.2547 160.785 26.9124 160.785C12.0491 160.785 0 148.736 0 133.873C0 120.531 9.7092 109.456 22.4476 107.329C9.7092 105.202 0 94.1271 0 80.7852C0 67.4432 9.7092 56.3686 22.4476 54.2414C9.7092 52.1142 0 41.0399 0 27.6976C0 12.8343 12.0491 0.785156 26.9124 0.785156C40.2547 0.785156 51.329 10.4944 53.4562 23.2327C55.5834 10.4944 66.6581 0.785156 80 0.785156C93.3419 0.785156 104.417 10.4944 106.544 23.2327C108.671 10.4944 119.746 0.785156 133.088 0.785156C147.951 0.785156 160 12.8343 160 27.6976ZM53.4562 32.1625C51.5716 43.4487 42.6635 52.3568 31.3773 54.2414C42.6635 56.126 51.5716 65.0344 53.4562 76.3206C55.3408 65.0344 64.2492 56.126 75.5355 54.2414C64.2492 52.3568 55.3408 43.4487 53.4562 32.1625ZM84.4645 54.2414C95.7508 52.3568 104.659 43.4487 106.544 32.1625C108.428 43.4487 117.337 52.3568 128.623 54.2414C117.337 56.126 108.428 65.0344 106.544 76.3206C104.659 65.0344 95.7508 56.126 84.4645 54.2414ZM106.544 129.408C108.428 118.122 117.337 109.214 128.623 107.329C117.337 105.444 108.428 96.5359 106.544 85.2497C104.659 96.5359 95.7508 105.444 84.4645 107.329C95.7508 109.214 104.659 118.122 106.544 129.408ZM53.4562 85.2497C55.3408 96.5359 64.2492 105.444 75.5355 107.329C64.2492 109.214 55.3408 118.122 53.4562 129.408C51.5716 118.122 42.6635 109.214 31.3773 107.329C42.6635 105.444 51.5716 96.5359 53.4562 85.2497Z"
+              fill="#FFD9F2"
+            />
           </svg>
-        
-         </div>
+        </div>
 
-        <div className='freetrialcontent'>
-        
-            <h2>Ready to take your surveys to the next level ? </h2>
-            <p>Sign up for a free trial today and experience the power of interactive video and AI. </p>
-            
-            <button id="freetrialbtn" onClick={createfreetrail}>
+        <div className="freetrialcontent">
+          <h2>Ready to take your surveys to the next level ? </h2>
+          <p>
+            Sign up for a free trial today and experience the power of
+            interactive video and AI.{" "}
+          </p>
 
+          <button   id="freetrialbtn"
+            onClick={createfreetrail}
+            disabled={isTrialActive} >
             <svg width="31" height="21" viewBox="0 0 31 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.078 19.0768L12.4809 20.0149C13.5671 20.741 14.692 20.622 15.5261 20.0651C15.8451 19.8517 16.1183 19.576 16.3296 19.2545C16.6344 18.7943 16.8034 18.2485 16.8006 17.6944C17.0906 17.7294 17.3842 17.7181 17.6707 17.6609C19.1725 17.3607 20.1238 15.916 19.7433 14.407C19.7057 14.2579 19.6563 14.1121 19.5955 13.971C20.0804 14.077 20.5736 14.0649 21.0308 13.9459C21.7651 13.7534 22.4088 13.2868 22.7921 12.5811C23.5818 11.129 22.9334 9.35603 21.5249 8.58157C20.036 7.76065 19.8356 7.67509 19.6343 7.58865C19.4856 7.52449 19.3378 7.46038 18.4521 6.97879L26.9299 6.96947C27.1627 6.96947 27.3197 6.97601 27.5598 6.94905C28.2415 6.87187 28.8566 6.57253 29.3202 6.13276C30.5209 4.99387 30.52 3.14474 29.3165 2.0077C28.8353 1.55215 28.1943 1.25002 27.4841 1.18679C27.3068 1.17099 27.1876 1.17469 27.0195 1.17469L17.1673 1.18493C15.6692 1.18493 15.9832 0.52856 14.3226 0.247785C13.0785 0.036785 11.6035 -0.0199129 10.1635 0.109278C8.83726 0.228288 7.53683 0.505302 6.46637 0.963636C4.57571 1.77437 3.12751 3.04899 2.16413 4.56805C1.38652 5.79529 0.927446 7.17585 0.810136 8.59459C0.692825 10.0133 0.917274 11.4729 1.50285 12.86C2.2519 14.6292 3.5921 16.272 5.57139 17.5438C7.39182 18.7124 8.40319 18.9114 10.3778 19.2981L10.4194 19.3065C10.6725 19.3558 10.92 19.26 11.078 19.0768Z" fill="black"/>
             <path d="M10.6884 12.9717C10.8655 12.9689 11.0424 12.9843 11.2163 13.0176C11.3537 13.0422 11.48 12.9353 11.4746 12.793C11.4366 11.8709 11.9269 11.0342 12.7232 10.5929C12.74 10.5834 12.7558 10.5718 12.7702 10.5576C12.8117 10.517 12.8354 10.4614 12.8362 10.4032C12.837 10.3449 12.8148 10.2887 12.7744 10.2469C12.4725 9.93411 12.2117 9.48301 12.0476 9.083C12.0304 9.04123 12.0008 9.0058 11.9629 8.98152C11.9142 8.95026 11.8551 8.93977 11.7987 8.95236C11.7422 8.96494 11.6931 8.99957 11.662 9.04863C11.0923 9.94956 10.4198 9.96906 9.14877 10.0049L8.91489 10.0125C8.78833 10.0162 8.66548 9.96924 8.57325 9.88193C8.26712 9.59248 8.45398 9.06703 8.87983 9.04875L9.1179 9.04198C11.0228 8.98777 11.3578 7.68688 11.62 6.66798C11.7746 6.06726 11.8968 5.59325 12.3939 5.74321C12.514 5.77918 12.6153 5.86102 12.6762 5.97122C12.7371 6.08134 12.7528 6.21113 12.7199 6.33276C12.5267 7.36821 12.6724 8.51717 13.2999 9.38582H13.3008C13.9025 10.2171 14.7511 10.4639 15.7176 10.3548C16.2139 10.2986 16.454 10.0827 16.5638 9.75314C16.6597 9.46467 16.635 9.11436 16.6062 8.71041C16.5534 7.95574 16.5661 7.1579 16.5789 6.3555C16.5959 5.2843 16.6132 4.20448 16.4798 3.20583C16.4454 2.94635 16.373 2.71197 16.2679 2.50352C15.5953 1.16826 13.5137 1.10133 12.2353 1.05874C9.56577 0.969356 6.73972 1.38123 4.66817 3.20786C3.98534 3.81013 3.41879 4.5029 2.97455 5.20342C1.0106 8.30524 1.53962 12.0426 3.93373 14.772C5.34997 16.3867 6.9579 17.3717 8.99818 17.9239C9.21217 17.9805 9.36713 17.7142 9.20855 17.5555C8.34581 16.6931 8.08854 15.3365 8.65314 14.2278C9.06686 13.4153 9.81384 12.9859 10.6884 12.9717Z" fill="#FCC9B6"/>
@@ -69,17 +103,12 @@ const FreeTrialBanner = () => {
             <path d="M29.216 4.06869C29.2142 2.97956 28.4662 2.17935 27.3742 2.1812L17.6837 2.19052C17.6259 2.19054 17.5704 2.21366 17.5295 2.25481C17.4887 2.29596 17.4657 2.35177 17.4657 2.40997L17.4684 5.75126C17.4684 5.80945 17.4914 5.86525 17.5323 5.90639C17.5731 5.94754 17.6286 5.97067 17.6864 5.9707L27.3789 5.96139C28.4649 5.95954 29.2178 5.16142 29.216 4.06869Z" fill="#FCC9B6"/>
             <path d="M28.5598 4.06695C28.5579 2.97781 27.8099 2.17761 26.7179 2.17946L17.6835 2.18878C17.6257 2.18879 17.5702 2.21192 17.5293 2.25307C17.4885 2.29422 17.4655 2.35003 17.4655 2.40822L17.4682 5.08915C17.4682 5.14734 17.4912 5.20314 17.5321 5.24429C17.5729 5.28543 17.6284 5.30856 17.6862 5.30859L26.7226 5.29928C27.8086 5.29743 28.5615 5.15967 28.5598 4.06695Z" fill="#FEDECF"/>
             </svg>
-
-               Start Your Free Trial Today 
-               
-            </button>
-
+            Start Your Free Trial Today
+          </button>
         </div>
-    
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default FreeTrialBanner
+export default FreeTrialBanner;
