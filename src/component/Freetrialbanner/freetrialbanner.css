@@ -59,10 +59,10 @@
             line-height: normal;
         }
 
-        #freetrialbtn:hover {
+        /* #freetrialbtn:hover {
             background-color: #0056b3;
           }
-          
+           */
           #freetrialbtn:disabled {
             background-color: #cccccc;
             color: #666666;

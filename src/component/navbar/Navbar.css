@@ -20,9 +20,9 @@
           font-size: var(--size-sm);
           font-weight: 600;
     }
-.btn:hover {
+/* .btn:hover {
     background-color: #0056b3;
-}
+} */
 .btn:disabled {
     background-color: #cccccc;
     color: #666666;
