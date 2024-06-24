@@ -15,12 +15,12 @@ const FreeTrialBanner = () => {
                 if(accessToken){
                   try {
                     const createfreetrailurl = 'https://stream.xircular.io/api/v1/customer/startTrial';
-                    const response = await axios.post(createfreetrailurl, {
+                    const response = await axios.get(createfreetrailurl, {
                       headers: {
                         Authorization: `Bearer ${accessToken}`
                       },
                     });
-                    
+
                         console.log("Free Trial Response",response);
                         // setData(response.data.data);
                         window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`
