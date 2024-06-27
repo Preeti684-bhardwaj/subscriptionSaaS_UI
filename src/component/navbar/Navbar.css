@@ -17,9 +17,22 @@
     }
 
     .userName{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:1rem;
+    }
+
+    .userName p {
           font-size: var(--size-sm);
           font-weight: 600;
     }
+
+    .logoutbtn{
+        
+    }
+
+
 /* .btn:hover {
     background-color: #0056b3;
 } */
@@ -43,7 +56,7 @@
         height: 2.25rem; 
    }
 
-   .userName{
+   .userName p{
     font-size: var(--size-base);
     font-weight: 600;
    }
@@ -58,7 +71,7 @@
         height: 2.25rem; 
    }
 
-   .userName{
+   .userName p{
     font-size: var(--size-base);
     font-weight: 600;
    }

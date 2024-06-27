@@ -22,9 +22,9 @@ const Navbar = () => {
           })
           .then(response => {
             const user = response.data[0]; // Adjust based on the actual response structure
-           console.log(user);
-            setIsSubscribed(user.isSubscribed);
-            setIsTrialActive(user.isTrialActive);
+              console.log(user);
+              setIsSubscribed(user.isSubscribed);
+              setIsTrialActive(user.isTrialActive);
           })
           .catch(error => {
             console.error("Error fetching user subscription data", error);
@@ -42,6 +42,12 @@ const Navbar = () => {
   // Otherwise, set the name to an empty string
   const Name = userName ? extractNameFromEmail(userName) : '';
 
+      const handlelogout = () =>{
+               localStorage.clear();
+               window.location.reload();
+      }
+
+
   return (
     <div className='navbar'>
 
@@ -52,22 +58,23 @@ const Navbar = () => {
       {/* Render the "Sign in" button if accessToken does not exist */}
        { !accessToken &&
            ( <button className='signUp btn' onClick={() => navigate("/SignUp")}>
-                Sign up
-               </button>)
+                Sign up / Sign In
+             </button> )
          }
 
 
       {/* Render the userName if it exists */}
       {userName && (   
-            <div className='userName' >
-              Welcome, {Name}    
-              <button 
-            style={{ marginLeft: '1rem' }} 
+        <div className='userName' >
+           <p>  Hi,{Name}   </p> 
+           <button
             className='btn' 
             onClick={() => window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`}
             disabled={isSubscribed === false && isTrialActive === false}
-          > Go to Dashboard </button>  
-            </div>   
+            > Go to Dashboard </button>  
+
+             <button className='logoutbtn' onClick={ handlelogout }> Logout </button>
+           </div>   
           )}
 
     </div>

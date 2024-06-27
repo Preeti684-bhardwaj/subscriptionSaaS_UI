@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
-const PayButton = ({ planPrice, features, frequency, planName, description }) => {
+const PayButton = ({ planPrice, features, frequency, planName, description , isPlanAlreadyPurchased }) => {
   const navigate = useNavigate();
 
   const handlePurchase = () => {
@@ -12,6 +12,7 @@ const PayButton = ({ planPrice, features, frequency, planName, description }) =>
     console.log("frequency:", frequency);
     console.log("Plan Name:", planName);
     console.log("Description:", description);
+    console.log("isPlanAlreadyPurchased:", isPlanAlreadyPurchased);
 
     const accessToken = localStorage.getItem('accessToken');
     const userId = localStorage.getItem('userId');
@@ -46,9 +47,13 @@ const PayButton = ({ planPrice, features, frequency, planName, description }) =>
 
   return (
        <div className='subcrpbtnwrapper'>
-        <button className="subscribebtn" onClick={handlePurchase}>
-          Subscribe
-        </button>
+          <button 
+              className="subscribebtn" 
+              onClick={handlePurchase}
+              disabled={isPlanAlreadyPurchased}
+              >
+              Subscribe
+          </button>
        </div>
   );
 };

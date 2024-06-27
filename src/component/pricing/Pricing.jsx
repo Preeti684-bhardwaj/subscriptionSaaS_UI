@@ -9,15 +9,15 @@ const renderLoader = () => <p>Loading</p>;
 
 export default function Pricing() {
 
-
   const [selectedTab, setSelectedTab] = useState("monthly");
   const [ subscriptiondata, setSubscriptiondata] = useState([]);
-  const [data, setData] = useState(null);
+  const [userplandata, setUserplanData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const accessToken = localStorage.getItem('accessToken');
 
   
-    /* Api call for pending call requests */
+    /* Api call for fetching subscription plans */
     useEffect(() => {
 
       const fetchsubscriptiondata = async () => {
@@ -25,7 +25,7 @@ export default function Pricing() {
                 const requesturl = `https://stream.xircular.io/api/v1/subscription_plan/getByFrequency?frequency=${selectedTab}`;
                 const response = await axios.get(requesturl);
   
-                console.log("Subscriptiondata Response",response.data);
+                console.log("All Subscriptiondata Response",response.data);
                 setSubscriptiondata(response.data);
                 setLoading(false);
         
@@ -40,158 +40,25 @@ export default function Pricing() {
 
         }, [selectedTab])
 
+    
+     /* Api call for fetching user subscription plans */
+    useEffect(() => {
+      const fetchUserSubscriptionPlan = async () => {
+        try{
+               const response = await axios.get('https://stream.xircular.io/api/v1/subscription/getCustomerSubscription',{
+                headers: { Authorization: `Bearer ${accessToken}` }
+                });
+                  // console.log("User Subscription plan Response",response.data[0]);
+                  setUserplanData(response.data[0].subscriptions);
+                  console.log("User Subscription plan:",response.data[0].subscriptions);
+                } catch (error) {
+                 console.error('Error fetching data:', error);
+               }
+             };
+  
+            fetchUserSubscriptionPlan();
 
-
-
-  // const fetchData = async () => {
-  //   try {
-  //     const jsonData = {
-  //       totalItems: 3,
-  //       products: [
-  //         {
-  //           id: "1",
-  //           name: "Free Trial",
-  //           description: "Try our service for free",
-  //           currency: "USD",
-  //           features: ["Limited access", "Basic support"],
-  //           subscriptionPlans: [
-  //             {
-  //               id: "11",
-  //               frequency: "monthly",
-  //               price: 0,
-  //               createdAt: "2024-04-01T06:17:39.119Z",
-  //               updatedAt: "2024-04-01T06:17:39.119Z",
-  //               productId: "1",
-  //             },
-  //             {
-  //               id: "12",
-  //               frequency: "annually",
-  //               price: 0,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "1",
-  //             },
-  //             {
-  //               id: "13",
-  //               frequency: "half-yearly",
-  //               price: 0,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "1",
-  //             },
-  //             {
-  //               id: "14",
-  //               frequency: "quarterly",
-  //               price: 0,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "1",
-  //             },
-  //           ],
-  //         },
-  //         {
-  //           id: "2",
-  //           name: "Basic",
-  //           description: "Get started with essential features",
-  //           currency: "USD",
-  //           features: ["Full access", "Email support"],
-  //           subscriptionPlans: [
-  //             {
-  //               id: "21",
-  //               frequency: "monthly",
-  //               price: 9.99,
-  //               createdAt: "2024-04-01T06:17:39.119Z",
-  //               updatedAt: "2024-04-01T06:17:39.119Z",
-  //               productId: "2",
-  //             },
-  //             {
-  //               id: "22",
-  //               frequency: "annually",
-  //               price: 109.99,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "2",
-  //             },
-  //             {
-  //               id: "23",
-  //               frequency: "half-yearly",
-  //               price: 59.99,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "2",
-  //             },
-  //             {
-  //               id: "24",
-  //               frequency: "quarterly",
-  //               price: 29.99,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "2",
-  //             },
-  //           ],
-  //         },
-  //         {
-  //           id: "3",
-  //           name: "Premium",
-  //           description: "Unlock advanced features for professionals",
-  //           currency: "USD",
-  //           features: [
-  //             "Full access",
-  //             "Priority support",
-  //             "Customization options",
-  //           ],
-  //           subscriptionPlans: [
-  //             {
-  //               id: "31",
-  //               frequency: "monthly",
-  //               price: 699,
-  //               createdAt: "2024-04-01T06:17:39.119Z",
-  //               updatedAt: "2024-04-01T06:17:39.119Z",
-  //               productId: "3",
-  //             },
-  //             {
-  //               id: "32",
-  //               frequency: "annually",
-  //               price: 7999,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "3",
-  //             },
-  //             {
-  //               id: "33",
-  //               frequency: "half-yearly",
-  //               price: 3999,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "3",
-  //             },
-  //             {
-  //               id: "34",
-  //               frequency: "quarterly",
-  //               price: 2199,
-  //               createdAt: "2024-04-01T06:19:11.587Z",
-  //               updatedAt: "2024-04-01T06:19:11.587Z",
-  //               productId: "3",
-  //             },
-  //           ],
-  //         },
-  //       ],
-  //       totalPages: 1,
-  //       currentPage: 0,
-  //     };
-
-  //     console.log(jsonData)
-  //     setData(jsonData);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     setError(error.message);
-  //     setLoading(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
+           },[accessToken])
 
 
   if (loading) {
@@ -250,34 +117,36 @@ export default function Pricing() {
       </div>
 
       <div className="pricing-plans">
-
-        {subscriptiondata.sort((a,b)=> a.price - b.price).map((plan) => (
-
-          <div key={plan.product.id} className="pricing-card">
-
-              <h2 id="subcrpname">  {plan.product.name} </h2>
-
-               <p id="subcrpprice">
-                  <strong id="subpricestrong">
-                    { plan.price }/ 
-                  </strong> 
-                   { getPriceLabel(plan.frequency) }
-               </p>
-
-              <span id="subcrpdescp"> {plan.product.description} </span>
-
-                <div className="featureswrapper">
+      {subscriptiondata
+        .sort((a, b) => a.price - b.price)
+        .map((plan) => {
+          const isSubscribed = userplandata.some(
+            (userPlan) =>
+              userPlan.plan === plan.product.name && userPlan.frequency === plan.frequency
+          );
+    
+          return (
+            <div
+              key={plan.id}
+              className="pricing-card"
+              style={{ background: isSubscribed ? '#d9d9d9' : '#fff' }}
+            >
+              <h2 id="subcrpname">{plan.product.name}</h2>
+              <p id="subcrpprice">
+                <strong id="subpricestrong">{'$'}{plan.price}/</strong>
+                {getPriceLabel(plan.frequency)}
+              </p>
+              <span id="subcrpdescp">{plan.product.description}</span>
+              <div className="featureswrapper">
                 <ul className="features">
                   <li className="feature-list">
-                       Number of campaigns:  {plan.product.features['no.of campaign'] }
+                    Number of campaigns: {plan.product.features['no.of campaign']}
                   </li>
                   <li className="feature-list">
-                      Video length: {plan.product.features['video length']} sec
+                    Video length: {plan.product.features['video length']} sec
                   </li>
-
                 </ul>
-                </div>
-
+              </div>
               <Suspense fallback={renderLoader()}>
                 <PayButton
                   planPrice={plan.price}
@@ -285,15 +154,13 @@ export default function Pricing() {
                   planName={plan.product.name}
                   frequency={plan.frequency}
                   description={plan.product.description}
-                  />
+                  isPlanAlreadyPurchased={isSubscribed}
+                />
               </Suspense>
-
-           </div>
-
-          ))
-        }
-      </div>
-
+            </div>
+          );
+        })}
+    </div>
 
       </div>
     </div>
