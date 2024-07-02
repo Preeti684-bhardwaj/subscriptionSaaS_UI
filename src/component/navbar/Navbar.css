@@ -29,9 +29,9 @@
           font-weight: 400;
     }
 
-     .gotodashboard{
+     /* .gotodashboard{
             padding: 11px 14px!important;
-     }
+     } */
 
     .gotodashboard:disabled {
         background-color: #cccccc;
@@ -59,9 +59,9 @@
         gap:1rem;
     }
 
-    .gotodashboard{
+    /* .gotodashboard{
         padding: 12px 16px!important;
-     }
+     } */
 
     .logowrapper img {
         width: 100%;
@@ -82,9 +82,9 @@
           gap:1rem;
      }
 
-     .gotodashboard{
+     /* .gotodashboard{
          padding: 12px 16px!important;
-     }
+     } */
 
     .navbar{
         padding-left: 1.125rem;
