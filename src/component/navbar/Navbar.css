@@ -1,8 +1,8 @@
 
     .navbar{
         width: 100% !important;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -12,7 +12,7 @@
 
     .logowrapper img {
          width: 100%;
-         height: 1.15rem; 
+         height: 1.25rem; 
     }
 
     .userName{
@@ -20,17 +20,18 @@
         align-items: center;
         justify-content: space-between;
         gap:0.5rem;
+        font-size: var(--size-sm);
+        font-weight: 400;
     }
 
     .userName p {
           font-size: var(--size-sm);
-          font-weight: 600;
+          font-weight: 400;
     }
 
      .gotodashboard{
-            padding: 11px!important;
+            padding: 11px 14px!important;
      }
-
 
 
     /* .logoutbtn{
