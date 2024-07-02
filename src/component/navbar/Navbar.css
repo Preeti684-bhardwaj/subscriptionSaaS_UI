@@ -33,21 +33,12 @@
             padding: 11px 14px!important;
      }
 
-
-    /* .logoutbtn{
-        
-    } */
-
-/* .btn:hover {
-    background-color: #0056b3;
-} */
-
-.btn:disabled {
-    background-color: #cccccc;
-    color: #666666;
-    cursor: not-allowed;
-    border: 1px solid #999999;
-  }
+    .gotodashboard:disabled {
+        background-color: #cccccc;
+        color: #666666;
+        cursor: not-allowed;
+        border: 1px solid #999999;
+    }
 
 
 /* xs */
@@ -77,10 +68,10 @@
         height: 2.25rem; 
    }
 
-   .userName p{
-    font-size: var(--size-base);
-    font-weight: 600;
-   }
+    .userName p{
+        font-size: var(--size-base);
+        font-weight: 600;
+    }
 
 }
 
@@ -105,10 +96,10 @@
         height: 2.25rem; 
    }
 
-   .userName p{
-    font-size: var(--size-base);
-    font-weight: 600;
-   }
+    .userName p{
+        font-size: var(--size-base);
+        font-weight: 600;
+    }
 
 }
 

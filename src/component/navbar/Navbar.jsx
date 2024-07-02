@@ -58,7 +58,7 @@ const Navbar = () => {
       {/* Render the "Sign in" button if accessToken does not exist */}
        { !accessToken &&
            ( <button className='' onClick={() => navigate("/SignUp")}>
-                Sign up / Sign In
+                Signup/SignIn
              </button> )
          }
 
@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className='userName' >
          {/*   <p>  Hi,{Name}   </p> */}
            <button
-            className='btn gotodashboard' 
+            className='gotodashboard' 
             onClick={() => window.location.href = `https://new-video-editor.vercel.app/listings?accessToken=${accessToken}`}
             disabled={isSubscribed === false && isTrialActive === false}
             > Go to Dashboard </button>  
