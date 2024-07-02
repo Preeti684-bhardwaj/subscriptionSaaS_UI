@@ -20,8 +20,8 @@
         align-items: center;
         justify-content: space-between;
         gap:0.5rem;
-        font-size: var(--size-sm);
-        font-weight: 400;
+        font-size: var(--size-base);
+        font-weight: 500;
     }
 
     .userName p {
