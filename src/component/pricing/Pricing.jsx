@@ -10,12 +10,12 @@ const renderLoader = () => <p>Loading</p>;
 export default function Pricing() {
 
   const [selectedTab, setSelectedTab] = useState("monthly");
-  const [ subscriptiondata, setSubscriptiondata] = useState([]);
+  const [subscriptiondata, setSubscriptiondata] = useState([]);
   const [userplandata, setUserplanData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const accessToken = localStorage.getItem('accessToken');
-
+  console.log("pricing tab accessToken:", accessToken)
   
     /* Api call for fetching subscription plans */
     useEffect(() => {
@@ -99,7 +99,6 @@ export default function Pricing() {
 
       <div className="plan-type">
         <div className="planswrapper">
-
           <div className={`tab ${selectedTab === 'monthly' ? 'active' : ''}`} onClick={() => handleTabClick('monthly')}>
             Monthly 
           </div>
@@ -112,12 +111,12 @@ export default function Pricing() {
           <div className={`tab ${selectedTab === 'annually' ? 'active' : ''}`} onClick={() => handleTabClick('annually')}>
             Annual
           </div>
-
         </div>
       </div>
 
+      
       <div className="pricing-plans">
-      {subscriptiondata
+    {   subscriptiondata
         .sort((a, b) => a.price - b.price)
         .map((plan) => {
           const isSubscribed = userplandata.some(
@@ -148,21 +147,21 @@ export default function Pricing() {
                 </ul>
               </div>
               <Suspense fallback={renderLoader()}>
-                <PayButton
-                  planPrice={plan.price}
-                  features={plan.product.features}
-                  planName={plan.product.name}
-                  frequency={plan.frequency}
-                  description={plan.product.description}
-                  isPlanAlreadyPurchased={isSubscribed}
-                />
+                 <PayButton
+                      planPrice={plan.price}
+                      features={plan.product.features}
+                      planName={plan.product.name}
+                      frequency={plan.frequency}
+                      description={plan.product.description}
+                      isPlanAlreadyPurchased={isSubscribed}
+                 />
               </Suspense>
             </div>
           );
         })}
-    </div>
+     </div>
 
-      </div>
-    </div>
-  );
+     </div>
+   </div>
+ );
 }
