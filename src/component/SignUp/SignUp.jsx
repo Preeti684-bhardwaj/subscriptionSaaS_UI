@@ -104,7 +104,7 @@ const SignUp = () => {
       .then((res) => {
         console.log("signupai res", res);
         console.log("successmsg", res.data.message);
-        navigate("/");
+        navigate("/SignIn");
       })
       .catch((err) => {
         console.log("errors", err);

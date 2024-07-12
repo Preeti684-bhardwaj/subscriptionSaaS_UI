@@ -86,7 +86,7 @@ const SignIn = ({ setIsAuthenticated }) => {
         localStorage.setItem('userId', userId);
         localStorage.setItem('userName', userName);
 
-        window.alert("success");
+        // window.alert("success");
 
         setIsAuthenticated(true);
 
