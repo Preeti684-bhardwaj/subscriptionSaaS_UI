@@ -42,23 +42,37 @@ export default function Pricing() {
 
     
      /* Api call for fetching user subscription plans */
-    useEffect(() => {
+     useEffect(() => {
       const fetchUserSubscriptionPlan = async () => {
-        try{
-               const response = await axios.get('https://stream.xircular.io/api/v1/subscription/getCustomerSubscription',{
-                headers: { Authorization: `Bearer ${accessToken}` }
-                });
-                  // console.log("User Subscription plan Response",response.data[0]);
-                  setUserplanData(response.data[0].subscriptions);
-                  console.log("User Subscription plan:",response.data[0].subscriptions);
-                } catch (error) {
-                 console.error('Error fetching data:', error);
-               }
-             };
-  
-            fetchUserSubscriptionPlan();
-
-           },[accessToken])
+        if (!accessToken) {
+          navigate('/signin');
+          return;
+        }
+    
+        try {
+          const response = await axios.get('https://stream.xircular.io/api/v1/subscription/getCustomerSubscription', {
+            headers: { Authorization: `Bearer ${accessToken}` }
+          });
+          
+          setUserplanData(response.data[0].subscriptions);
+          console.log("User Subscription plan:", response.data[0].subscriptions);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          
+          if (error.response && error.response.status === 401) {
+            // Token is expired or invalid
+            alert("Your session has expired. Please sign in again.");
+            localStorage.removeItem('accessToken'); // Clear the expired token
+            navigate('/signin'); // Navigate to signin page
+          } else {
+            // Handle other types of errors
+            setError(error.message || "An error occurred while fetching user subscription data.");
+          }
+        }
+      };
+    
+      fetchUserSubscriptionPlan();
+    }, [accessToken, navigate])
 
 
   if (loading) {
