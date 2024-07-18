@@ -1,19 +1,4 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  Button,
-} from "@mui/material";
-// import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
-import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import "react-phone-number-input/style.css";
 import "./SignUp.css";
 import axios from "axios";
@@ -41,22 +26,7 @@ const SignUp = () => {
   const [emailerr, setEmailerr] = useState("");
   const [PasswordErr, setPasswordErr] = useState("");
   const navigate = useNavigate();
-  const [isVerifyEmailVisible, setIsVerifyEmailVisible] = useState(true);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
-  const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
-  };
-
-  const handleEmailChange = (e) => {
-    const newEmail = e.target.value;
-    setEmail(newEmail);
-  };
+  const [isVerifyEmailVisible, setIsVerifyEmailVisible] = useState(false);
 
   const handlePhoneChange = (value) => {
     try {

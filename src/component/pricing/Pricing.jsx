@@ -47,7 +47,7 @@ export default function Pricing() {
      useEffect(() => {
       const fetchUserSubscriptionPlan = async () => {
         if (!accessToken) {
-          navigate('/signin');
+          // navigate('/signin');
           return;
         }
     
