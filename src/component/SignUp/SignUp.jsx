@@ -157,6 +157,7 @@ const SignUp = () => {
       </div>
       <div className="rightSection">
         <div className="loginBox">
+        <img className="loginBoxLogo" src={logo} alt="" />
           <div className="heading">
             <label className="welcomeText">Hi, Welcome</label>
             <img src={wave} alt="" />
