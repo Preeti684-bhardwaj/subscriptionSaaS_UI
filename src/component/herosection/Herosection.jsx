@@ -1,6 +1,6 @@
 import React from 'react';
 import './heros.css';
-import sparkle from './🦆 emoji _dizzy_.png';
+import sparkle from './sparkle.png';
 
 
 const Herosection = () => {

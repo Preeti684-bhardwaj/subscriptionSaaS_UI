@@ -41,11 +41,30 @@
   font-weight: 500 !important;
   font-size: 13px !important;
 }
-#phone-input{
+/* #phone-input{
   height: 2rem;
   border-radius: 0.3rem;
   border: 1px solid grey;
+
+} */
+ .PhoneInput{
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.174);
+border-radius: 7px;
+padding-left: 10px;
+ }
+.PhoneInput>input{
+padding: 15px;
+border: none;
+outline: none;
+margin-left: -15px;
 }
+.PhoneInput>select{
+  border: 1px solid red;
+  /* background-color: blue; */
+  padding: 10px;
+}
+
 #phone-input:hover{
   border: 1px solid #7A38D4;
 }
@@ -98,6 +117,9 @@
     text-align: center;
     gap: 1rem;
     margin-bottom: 2rem;
+}
+.termsSpan{
+  text-decoration: underline;
 }
 @media screen and (max-width: 600px) {
     /* .input-card{

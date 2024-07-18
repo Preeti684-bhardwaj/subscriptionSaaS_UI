@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import "./Pricing.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 const PayButton = lazy(() => import('../PayButton'));
@@ -16,6 +17,7 @@ export default function Pricing() {
   const [error, setError] = useState(null);
   const accessToken = localStorage.getItem('accessToken');
   console.log("pricing tab accessToken:", accessToken)
+  const navigate = useNavigate()
   
     /* Api call for fetching subscription plans */
     useEffect(() => {
