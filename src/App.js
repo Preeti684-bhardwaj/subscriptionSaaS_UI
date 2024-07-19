@@ -10,6 +10,7 @@ import CheckoutSuccess from './component/CheckoutSuccess';
 import CheckoutFail from './component/CheckoutFail';
 import NotFound from './component/NotFound';
 import Home from './Home';
+import Logout from './component/logout/Logout';
 
 function App() {
   const [ stripePromise, setStripePromise ] = useState(null);
@@ -73,7 +74,9 @@ function App() {
       {/* {clientSecret && ( */}
         {/* // <Elements stripe={stripePromise}> */}
           <Routes>
-            <Route path="/:logoutRequest?" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/logoutRequest" element={<Logout />} />
+
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/SignIn" element={<SignIn setIsAuthenticated={ setIsAuthenticated }/>} />
             {/* <Route path="/checkout" element={<CheckoutForm/>} /> */}

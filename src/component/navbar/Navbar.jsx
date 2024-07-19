@@ -15,12 +15,7 @@ const Navbar = () => {
       const [isTrialActive, setIsTrialActive] = useState(null);
 
 
-      useEffect(()=>{
-        if(logoutRequest==="logoutRequest"){
-          localStorage.clear()
-          navigate("/SignIn")
-        }
-      },[logoutRequest])
+  
       useEffect(() => {
         // Fetch user subscription information only if accessToken is available
         if (accessToken) {
