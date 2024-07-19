@@ -5,7 +5,7 @@ import axios from 'axios';
 import logo from './aiengagelogo.png';
 
 const Navbar = () => {
-  const {logoutRequest} = useParams()
+  
       const navigate = useNavigate();
       // Retrieve accessToken from localStorage
       const accessToken = localStorage.getItem('accessToken');
