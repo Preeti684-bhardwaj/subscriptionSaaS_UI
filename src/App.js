@@ -10,7 +10,8 @@ import CheckoutSuccess from './component/CheckoutSuccess';
 import CheckoutFail from './component/CheckoutFail';
 import NotFound from './component/NotFound';
 import Home from './Home';
-import Logout from './component/logout/Logout';
+import Logout from './component/Logout';
+
 
 function App() {
   const [ stripePromise, setStripePromise ] = useState(null);
