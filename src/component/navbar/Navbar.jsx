@@ -5,7 +5,7 @@ import axios from 'axios';
 import logo from './aiengagelogo.png';
 
 const Navbar = () => {
-  const {page} = useParams()
+  const {logoutRequest} = useParams()
       const navigate = useNavigate();
       // Retrieve accessToken from localStorage
       const accessToken = localStorage.getItem('accessToken');
@@ -16,11 +16,11 @@ const Navbar = () => {
 
 
       useEffect(()=>{
-        if(page==="logoutRequest"){
+        if(logoutRequest==="logoutRequest"){
           localStorage.clear()
           navigate("/SignIn")
         }
-      },[page])
+      },[logoutRequest])
       useEffect(() => {
         // Fetch user subscription information only if accessToken is available
         if (accessToken) {

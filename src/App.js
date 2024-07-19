@@ -73,7 +73,7 @@ function App() {
       {/* {clientSecret && ( */}
         {/* // <Elements stripe={stripePromise}> */}
           <Routes>
-            <Route path="/:page" element={<Home />} />
+            <Route path="/:logoutRequest?" element={<Home />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/SignIn" element={<SignIn setIsAuthenticated={ setIsAuthenticated }/>} />
             {/* <Route path="/checkout" element={<CheckoutForm/>} /> */}
