@@ -76,7 +76,7 @@ const SignIn = ({ setIsAuthenticated }) => {
 
         setIsAuthenticated(true);
 
-        navigate("/"); // Use navigate
+        navigate("/home"); // Use navigate
       })
       .catch((err) => {
         console.log("siginerror", err.response.data.message);

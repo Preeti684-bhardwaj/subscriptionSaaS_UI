@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import logo from './aiengagelogo.png';
 
 const Navbar = () => {
+  const {page} = useParams()
       const navigate = useNavigate();
       // Retrieve accessToken from localStorage
       const accessToken = localStorage.getItem('accessToken');
@@ -14,6 +15,12 @@ const Navbar = () => {
       const [isTrialActive, setIsTrialActive] = useState(null);
 
 
+      useEffect(()=>{
+        if(page==="logoutRequest"){
+          localStorage.clear()
+          navigate("/SignIn")
+        }
+      },[page])
       useEffect(() => {
         // Fetch user subscription information only if accessToken is available
         if (accessToken) {
